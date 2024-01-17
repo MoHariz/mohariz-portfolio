@@ -1,12 +1,11 @@
 import * as React from "react"
-import PageWrapper from "../components/PageWrapper/PageWrapper"
+import PageWrapper from "../components/PageWrapper"
+import { HeadFC, Link } from "gatsby";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faFile } from '@fortawesome/free-solid-svg-icons';
+import { Tooltip } from '@chakra-ui/react';
 
-
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
 const headingStyles = {
   marginTop: 0,
   marginBottom: 64,
@@ -139,26 +138,19 @@ const links = [
 
 const IndexPage: React.FC = () => {
   return (
-    <PageWrapper
-      headComponent={
-        <>
-          <title>Home Page</title>
-          <meta name="description" content="Home Page" />
-        </>
-      }
-      pageStyles={pageStyles}
-    >
+    <PageWrapper hideFooter>
       <>
-        <h1 style={headingStyles}>
+        <Hero />
+        {/* <h1 style={headingStyles}>
           Congratulations
           <br />
           <span style={headingAccentStyles}>— you just made a Gatsby site! 🎉🎉🎉</span>
-        </h1>
-        <p style={paragraphStyles}>
+        </h1> */}
+        {/* <p style={paragraphStyles}>
           Edit <code style={codeStyles}>src/pages/index.tsx</code> to see this page
           update in real-time. 😎
-        </p>
-        <ul style={doclistStyles}>
+        </p> */}
+        {/* <ul style={doclistStyles}>
           {docLinks.map(doc => (
             <li key={doc.url} style={docLinkStyle}>
               <a
@@ -169,8 +161,8 @@ const IndexPage: React.FC = () => {
               </a>
             </li>
           ))}
-        </ul>
-        <ul style={listStyles}>
+        </ul> */}
+        {/* <ul style={listStyles}>
           {links.map(link => (
             <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
               <span>
@@ -189,14 +181,67 @@ const IndexPage: React.FC = () => {
               </span>
             </li>
           ))}
-        </ul>
-        <img
+        </ul> */}
+        {/* <img
           alt="Gatsby G Logo"
           src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-        />
+        /> */}
       </>
     </PageWrapper>
   )
 }
 
 export default IndexPage
+
+const Hero: React.FC = () => {
+  const verbs = [
+    "create",
+    "build",
+    "develop",
+    "deploy",
+    "host",
+    "grow",
+    "scale",
+    "innovate",
+    "transform",
+    "create",
+  ];
+
+  const [verbIndex, setVerbIndex] = React.useState<number>(0);
+
+  React.useEffect(() => {
+    const intervalId = setInterval(() => {
+      if (verbIndex < verbs.length - 1) {
+        setVerbIndex(verbIndex + 1);
+      } else {
+        setVerbIndex(0);
+      }
+    }, 2000);
+
+    return () => clearInterval(intervalId); // Cleanup on unmount
+  }, [verbs]);
+
+  return (
+    <div>
+      <h1>Hi there, I am Muhammad!</h1>
+      <p>I am a full-stack software engineer with interests in web development, software infrastructure, and front-end development.</p>
+      <p>
+        Let's {verbs[verbIndex]}!
+      </p>
+      <div className="flex gap-4">
+        <Link className="relative" target="_blank" to="https://www.linkedin.com/in/mohariz/">
+          <Tooltip label='LinkedIn'>
+            <FontAwesomeIcon icon={faLinkedin} />
+          </Tooltip>
+        </Link>
+        <Link target="_blank" to="https://drive.google.com/file/d/1yWlzv96ak89aRcXNfrlDUnQ7VyYZsq0J/view?usp=sharing">
+          <Tooltip label='Resume'>
+            <FontAwesomeIcon icon={faFile} />
+          </Tooltip>
+        </Link>
+      </div>
+    </div>
+  )
+}
+
+export const Head: HeadFC = () => <title>Muhammad Hariz | Home Page</title>
