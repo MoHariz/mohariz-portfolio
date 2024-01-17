@@ -1,12 +1,7 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import PageWrapper from "../components/PageWrapper/PageWrapper";
+import { HeadFC, Link } from "gatsby"
+import PageWrapper from "../components/PageWrapper";
 
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
 const headingStyles = {
   marginTop: 0,
   marginBottom: 64,
@@ -26,10 +21,7 @@ const codeStyles = {
 
 const NotFoundPage: React.FC = () => {
   return (
-    <PageWrapper
-      headComponent={<title>Page not found</title>}
-      pageStyles={pageStyles}
-    >
+    <PageWrapper>
       <>
         <h1 style={headingStyles}>Page not found</h1>
         <p style={paragraphStyles}>
@@ -51,3 +43,5 @@ const NotFoundPage: React.FC = () => {
 }
 
 export default NotFoundPage
+
+export const Head: HeadFC = () => <title>Page Not Found</title>
