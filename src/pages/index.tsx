@@ -1,10 +1,7 @@
 import * as React from "react"
 import PageWrapper from "../components/PageWrapper"
-import { HeadFC, Link } from "gatsby";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faFile } from '@fortawesome/free-solid-svg-icons';
-import { Tooltip } from '@chakra-ui/react';
+import { HeadFC } from "gatsby";
+import Hero from "../components/Hero";
 
 const headingStyles = {
   marginTop: 0,
@@ -192,56 +189,5 @@ const IndexPage: React.FC = () => {
 }
 
 export default IndexPage
-
-const Hero: React.FC = () => {
-  const verbs = [
-    "create",
-    "build",
-    "develop",
-    "deploy",
-    "host",
-    "grow",
-    "scale",
-    "innovate",
-    "transform",
-    "create",
-  ];
-
-  const [verbIndex, setVerbIndex] = React.useState<number>(0);
-
-  React.useEffect(() => {
-    const intervalId = setInterval(() => {
-      if (verbIndex < verbs.length - 1) {
-        setVerbIndex(verbIndex + 1);
-      } else {
-        setVerbIndex(0);
-      }
-    }, 2000);
-
-    return () => clearInterval(intervalId); // Cleanup on unmount
-  }, [verbs]);
-
-  return (
-    <div>
-      <h1>Hi there, I am Muhammad!</h1>
-      <p>I am a full-stack software engineer with interests in web development, software infrastructure, and front-end development.</p>
-      <p>
-        Let's {verbs[verbIndex]}!
-      </p>
-      <div className="flex gap-4">
-        <Link className="relative" target="_blank" to="https://www.linkedin.com/in/mohariz/">
-          <Tooltip label='LinkedIn'>
-            <FontAwesomeIcon icon={faLinkedin} />
-          </Tooltip>
-        </Link>
-        <Link target="_blank" to="https://drive.google.com/file/d/1yWlzv96ak89aRcXNfrlDUnQ7VyYZsq0J/view?usp=sharing">
-          <Tooltip label='Resume'>
-            <FontAwesomeIcon icon={faFile} />
-          </Tooltip>
-        </Link>
-      </div>
-    </div>
-  )
-}
 
 export const Head: HeadFC = () => <title>Muhammad Hariz | Home Page</title>

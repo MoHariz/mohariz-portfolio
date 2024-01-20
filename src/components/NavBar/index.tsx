@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import React from 'react';
 
 const NavBar: React.FC = () => {
@@ -5,10 +6,10 @@ const NavBar: React.FC = () => {
     <nav className="sticky top-0 w-full bg-white px-10 py-4">
       <ul className="flex justify-end gap-4">
         <li>
-          <a href="#">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="#">About</a>
+          <Link to="/about">About</Link>
         </li>
         <li>
           <a href="mailto:muhammadhariz206@gmail.com">Contact</a>
