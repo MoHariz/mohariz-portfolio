@@ -18,12 +18,12 @@ const config: GatsbyConfig = {
     },
     __key: "images"
   },
-  // {
-  //   resolve: 'gatsby-source-wordpress',
-  //   options: {
-  //     "url": ""
-  //   }
-  // },
+  {
+    resolve: 'gatsby-source-wordpress',
+    options: {
+      url: "https://dev-mohariz.pantheonsite.io/graphql",
+    }
+  },
   // "gatsby-plugin-google-gtag"
 ]
 };
