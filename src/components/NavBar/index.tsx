@@ -8,8 +8,11 @@ const NavBar: React.FC = () => {
         <li>
           <Link to="/">Home</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/about">About</Link>
+        </li> */}
+        <li>
+          <Link to="/projects">Projects</Link>
         </li>
         <li>
           <a href="mailto:muhammadhariz206@gmail.com">Contact</a>
