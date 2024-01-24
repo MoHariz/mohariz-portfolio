@@ -13,3 +13,12 @@
 .typography-p {
     font-size: 1rem;
 }
+
+.typography-h1,
+.typography-h2,
+.typography-h3,
+.typography-h4,
+.typography-p {
+    font-family: -apple-system, Roboto, sans-serif, serif;
+    color: "#232129";
+}

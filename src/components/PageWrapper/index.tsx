@@ -15,8 +15,6 @@ const PageWrapper: React.FC<PageWrapperProps> = ({ children, pageStyles, hideFoo
       <main
         className='lg:px-40 md:px-20 sm:px-10 px-5 py-4'
         style={{
-          color: "#232129",
-          fontFamily: "-apple-system, Roboto, sans-serif, serif",
           ...pageStyles,
         }}
       >{children}</main>
