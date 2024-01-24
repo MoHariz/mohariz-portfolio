@@ -135,7 +135,7 @@ const links = [
 
 const IndexPage: React.FC = () => {
   return (
-    <PageWrapper hideFooter>
+    <PageWrapper>
       <>
         <Hero />
         {/* <h1 style={headingStyles}>
