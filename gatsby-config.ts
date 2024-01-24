@@ -21,7 +21,7 @@ const config: GatsbyConfig = {
   {
     resolve: 'gatsby-source-wordpress',
     options: {
-      url: "https://dev-mohariz.pantheonsite.io/graphql",
+      url: "https://test-mohariz.pantheonsite.io/graphql",
     }
   },
   // "gatsby-plugin-google-gtag"
