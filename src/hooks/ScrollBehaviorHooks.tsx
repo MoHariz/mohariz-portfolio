@@ -8,7 +8,7 @@ import { useRef, useState, useEffect } from 'react';
  * 
  * @returns {boolean} hasScrolledDown - The state indicating if a scroll down has occurred.
  */
-const useHasScrolledDown = () => {
+export const useHasScrolledDown = () => {
   const [hasScrolledDown, setHasScrolledDown] = useState(false);
   const lastScrollTop = useRef(0);
 
@@ -33,5 +33,22 @@ const useHasScrolledDown = () => {
   return hasScrolledDown;
 };
 
-export default useHasScrolledDown;
+
+export const useNotAtPageTop = () => {
+  const [isNotAtPageTop, setIsNotAtPageTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsNotAtPageTop(window.pageYOffset || document.documentElement.scrollTop > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  return isNotAtPageTop;
+};
 
