@@ -24,6 +24,7 @@ type ProjectPageTemplateProps = {
             featuredImage?: {
                 node: {
                     sourceUrl: string;
+                    altText: string;
                 }
             }
         }
@@ -39,7 +40,7 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
         <PageWrapper hideFooter>
             <>
                 <Link to="/projects">&#8592; Back</Link>
-                {project.featuredImage && <img className="w-full rounded-md mt-8" src={project.featuredImage.node.sourceUrl} alt="Project Image" />}
+                {project.featuredImage && <img className="project-image w-full object-cover rounded-md mt-8" src={project.featuredImage.node.sourceUrl} alt={project.featuredImage.node.altText} />}
                 <Typography className="mb-4 mt-8" variant="h1">{project.title}</Typography>
                 <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
                     {
@@ -67,7 +68,7 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
                         )
                     }
                 </div>
-                <div className="project-content" dangerouslySetInnerHTML={{ __html: project.content }} />
+                <div className="project-content mb-8" dangerouslySetInnerHTML={{ __html: project.content }} />
             </>
         </PageWrapper>
     );
