@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
                 />
             </Typography>
 
-            <div className="flex gap-4 lg:mt-30 md:mt-20 fade-in">
+            <div className="flex gap-4 lg:mt-30 md:mt-20 mt-10 fade-in">
                 <Link className="relative" target="_blank" to="https://www.linkedin.com/in/mohariz/">
                     <Tooltip label='LinkedIn'>
                         <FontAwesomeIcon className="w-8 h-8" icon={faLinkedin} />
