@@ -34,8 +34,6 @@ type ProjectPageTemplateProps = {
 export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) {
     const project = data.project;
 
-    // console.log(project);
-
     return (
         <PageWrapper hideFooter>
             <>

@@ -31,8 +31,6 @@ type ProjectsPageProps = {
 
 export default function ProjectsPage({ data }: ProjectsPageProps) {
 
-    // console.log(data)
-
     return (
         <PageWrapper hideFooter>
             <>
