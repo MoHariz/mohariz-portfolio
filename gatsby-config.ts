@@ -1,5 +1,9 @@
 import type { GatsbyConfig } from "gatsby";
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `mohariz.me`,
@@ -39,7 +43,7 @@ const config: GatsbyConfig = {
   {
     resolve: 'gatsby-source-wordpress',
     options: {
-      url: "https://test-mohariz.pantheonsite.io/graphql",
+      url: process.env.GATSBY_WORDPRESS_URL,
     }
   },
   {

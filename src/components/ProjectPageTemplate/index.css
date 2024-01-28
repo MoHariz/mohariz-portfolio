@@ -2,6 +2,10 @@
     font-family: -apple-system, Roboto, sans-serif, serif;
 }
 
+.project-content > p > a {
+    text-decoration: underline;
+}
+
 .project-links > a {
     font-weight: bold;
 }
