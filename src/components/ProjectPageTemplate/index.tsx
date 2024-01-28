@@ -76,7 +76,7 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
 
 export const Head: HeadFC = (data) => {
     return (
-        <title>{data.data.project?.title}</title>
+        <title>{`Muhammad Hariz | Projects - ${data.data.project.title}`}</title>
     );
 }
 

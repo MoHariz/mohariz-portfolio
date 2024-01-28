@@ -82,7 +82,7 @@ export const Head: HeadFC = () => <title>Muhammad Hariz | Projects</title>
 
 export const pageQuery = graphql`
   query {
-    projects: allWpProject {
+    projects: allWpProject(sort: {date: DESC}) {
         nodes {
             id
             title
