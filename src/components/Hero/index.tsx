@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
                         <FontAwesomeIcon className="w-8 h-8" icon={faLinkedin} />
                     </Tooltip>
                 </Link>
-                <Link target="_blank" to="https://drive.google.com/file/d/1yWlzv96ak89aRcXNfrlDUnQ7VyYZsq0J/view?usp=sharing">
+                <Link target="_blank" to="https://drive.google.com/file/d/1msXdqRd5dpYux23YnOLrwRTJeqG3kPIX/view?usp=sharing">
                     <Tooltip label='Resume'>
                         <FontAwesomeIcon className="w-8 h-8" icon={faFile} />
                     </Tooltip>
