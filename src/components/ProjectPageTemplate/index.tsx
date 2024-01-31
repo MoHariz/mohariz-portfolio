@@ -38,7 +38,7 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
         <PageWrapper hideFooter>
             <>
                 <Link to="/projects">&#8592; Back</Link>
-                {project.featuredImage && <img className="project-image w-full object-cover rounded-md mt-8" src={project.featuredImage.node.sourceUrl} alt={project.featuredImage.node.altText} />}
+                {project.featuredImage && <img className="w-full object-cover rounded-md mt-8 border-solid border border-black dark:border-white" src={project.featuredImage.node.sourceUrl} alt={project.featuredImage.node.altText} />}
                 <Typography className="mb-4 mt-8" variant="h1">{project.title}</Typography>
                 <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
                     {
