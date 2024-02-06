@@ -16,6 +16,8 @@ const PageWrapper: React.FC<PageWrapperProps> = ({ children, pageStyles, hideFoo
         className='lg:px-40 md:px-20 sm:px-10 px-5 py-4'
         style={{
           ...pageStyles,
+          maxWidth: '1200px',
+          margin: '0 auto',
         }}
       >{children}</main>
       {!hideFooter && <Footer />}
