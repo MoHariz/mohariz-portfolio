@@ -51,7 +51,7 @@ const config: GatsbyConfig = {
     options: {
       // You can add multiple tracking ids and a pageview event will be fired for all of them.
       trackingIds: [
-        "G-0NNK3L3KW1", // Google Analytics / GA
+        process.env.GOOGLE_ANALYTICS_TRACKING_ID, // Google Analytics / GA
         // "AW-CONVERSION_ID", // Google Ads / Adwords / AW
         // "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
       ],
@@ -68,6 +68,21 @@ const config: GatsbyConfig = {
         // Delays processing pageview events on route update (in milliseconds)
         // delayOnRouteUpdate: 0,
       },
+    },
+  },
+  {
+    resolve: "gatsby-plugin-google-tagmanager",
+    options: {
+      id: process.env.GOOGLE_TAG_MANAGER_TRACKING_ID,
+
+      // Include GTM in development.
+      // Defaults to false meaning GTM will only be loaded in production.
+      includeInDevelopment: false,
+
+      // Specify optional GTM environment details.
+      // gtmAuth: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING",
+      // gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_PREVIEW_NAME",
+      // dataLayerName: "YOUR_DATA_LAYER_NAME",
     },
   },
 ]
