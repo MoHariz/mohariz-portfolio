@@ -6,7 +6,7 @@ import { Link } from 'gatsby';
 
 const Footer: React.FC = () => {
   return (
-    <footer className='w-full flex justify-center items-center px-10 py-4' style={{ maxWidth: '1200px', margin: '0 auto'}}>
+    <footer className='w-full flex justify-center items-center lg:px-40 md:px-20 sm:px-10 px-5 py-4' style={{ maxWidth: '1200px', margin: '0 auto'}}>
       <div className='flex justify-between items-center w-full'>
         <p style={{ margin: 0 }}>© {new Date().getFullYear()} Muhammad Hariz</p>
 
