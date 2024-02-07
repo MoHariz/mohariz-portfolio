@@ -52,17 +52,17 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
                 <div className="project-links flex flex-wrap gap-4 my-4 justify-center sm:justify-start">
                     {
                         project.projectLinks.github && (
-                            <a href={project.projectLinks.github} target="_blank" rel="noreferrer">Github &#8594;</a>
+                            <Link to={project.projectLinks.github} target="_blank" rel="noreferrer">Github &#8594;</Link>
                         )
                     }
                     {
                         project.projectLinks.website && (
-                            <a href={project.projectLinks.website} target="_blank" rel="noreferrer">Website &#8594;</a>
+                            <Link to={project.projectLinks.website} target="_blank" rel="noreferrer">Website &#8594;</Link>
                         )
                     }
                     {
                         project.projectLinks.publication && (
-                            <a href={project.projectLinks.publication} target="_blank" rel="noreferrer">Publication &#8594;</a>
+                            <Link to={project.projectLinks.publication} target="_blank" rel="noreferrer">Publication &#8594;</Link>
                         )
                     }
                 </div>

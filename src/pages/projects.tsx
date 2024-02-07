@@ -59,7 +59,7 @@ function ProjectCard({ title, slug, featuredImage, technologies }: ProjectNodePr
                 />
                 <div className="lg:py-8">
                     <Typography variant="h2">{title}</Typography>
-                    <div className="flex flex-wrap gap-4">
+                    <div className="flex flex-wrap gap-2 lg:my-4">
                         {
                             technologies.nodes.map(tech => {
                                 return (
@@ -68,6 +68,7 @@ function ProjectCard({ title, slug, featuredImage, technologies }: ProjectNodePr
                             })
                         }
                     </div>
+                    <Link className="font-bold hover:underline" to={slug}>Read more &#8594;</Link>
                 </div>
             </div>
         </Link>
