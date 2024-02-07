@@ -11,10 +11,10 @@ const Footer: React.FC = () => {
         <p style={{ margin: 0 }}>© {new Date().getFullYear()} Muhammad Hariz</p>
 
         <div className='flex gap-4'>
-          <Link className="relative" target="_blank" to={process.env.LINKEDIN_URL || ""}>
+          <Link className="relative" target="_blank" to={process.env.GATSBY_LINKEDIN_URL || ""}>
             <FontAwesomeIcon className="w-5 h-5" icon={faLinkedin} />
           </Link>
-          <Link target="_blank" to={process.env.RESUME_LINK || ""}>
+          <Link target="_blank" to={process.env.GATSBY_RESUME_LINK || ""}>
             <FontAwesomeIcon className="w-5 h-5" icon={faFile} />
           </Link>
         </div>

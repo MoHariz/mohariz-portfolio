@@ -34,12 +34,12 @@ const Hero: React.FC = () => {
             </Typography>
 
             <div className="flex gap-4 lg:mt-30 md:mt-20 mt-10 fade-in">
-                <Link className="relative" target="_blank" to={process.env.LINKEDIN_URL || ""}>
+                <Link className="relative" target="_blank" to={process.env.GATSBY_LINKEDIN_URL || ""}>
                     <Tooltip label='LinkedIn'>
                         <FontAwesomeIcon className="w-8 h-8" icon={faLinkedin} />
                     </Tooltip>
                 </Link>
-                <Link target="_blank" to={process.env.RESUME_LINK || ""}>
+                <Link target="_blank" to={process.env.GATSBY_RESUME_LINK || ""}>
                     <Tooltip label='Resume'>
                         <FontAwesomeIcon className="w-8 h-8" icon={faFile} />
                     </Tooltip>

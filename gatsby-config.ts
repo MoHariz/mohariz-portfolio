@@ -51,7 +51,7 @@ const config: GatsbyConfig = {
     options: {
       // You can add multiple tracking ids and a pageview event will be fired for all of them.
       trackingIds: [
-        process.env.GOOGLE_ANALYTICS_TRACKING_ID, // Google Analytics / GA
+        process.env.GATSBY_GOOGLE_ANALYTICS_TRACKING_ID, // Google Analytics / GA
         // "AW-CONVERSION_ID", // Google Ads / Adwords / AW
         // "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
       ],
@@ -73,7 +73,7 @@ const config: GatsbyConfig = {
   {
     resolve: "gatsby-plugin-google-tagmanager",
     options: {
-      id: process.env.GOOGLE_TAG_MANAGER_TRACKING_ID,
+      id: process.env.GATSBY_GOOGLE_TAG_MANAGER_TRACKING_ID,
 
       // Include GTM in development.
       // Defaults to false meaning GTM will only be loaded in production.
