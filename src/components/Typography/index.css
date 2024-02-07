@@ -1,24 +1,51 @@
 .typography-h1 {
-    font-size: 3.052rem;
+    font-size: 2.986rem;
+    line-height: 1.2;
 }
 .typography-h2 {
-    font-size: 2.441rem;
+    font-size: 2.488rem;
+    line-height: 1.3;
 }
 .typography-h3 {
-    font-size: 1.953rem;
+    font-size: 2.074rem;
+    line-height: 1.35;
 }
 .typography-h4 {
-    font-size: 1.563rem;
+    font-size: 1.728rem;
+    line-height: 1.4;
+}
+.typography-h5 {
+    font-size: 1.44rem;
+    line-height: 1.5;
+}
+.typography-h6 {
+    font-size: 1.2rem;
+    line-height: 1.6;
 }
 .typography-p {
     font-size: 1rem;
+    line-height: 1.6;
 }
 
 .typography-h1,
 .typography-h2,
 .typography-h3,
 .typography-h4,
+.typography-h5,
+.typography-h6,
 .typography-p {
     font-family: -apple-system, Roboto, sans-serif, serif;
     color: "#232129";
+}
+
+@media (max-width: 768px) {
+    .typography-h1,
+    .typography-h2,
+    .typography-h3,
+    .typography-h4,
+    .typography-h5,
+    .typography-h6,
+    .typography-p {
+        line-height: 1.6;
+    }
 }
