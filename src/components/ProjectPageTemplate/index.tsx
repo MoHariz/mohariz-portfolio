@@ -40,7 +40,7 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
                 <Link to="/projects">&#8592; Back</Link>
                 {project.featuredImage && <img className="w-full object-cover rounded-md mt-8 border-solid border border-black dark:border-white" src={project.featuredImage.node.sourceUrl} alt={project.featuredImage.node.altText} />}
                 <Typography className="mb-4 mt-8" variant="h1">{project.title}</Typography>
-                <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
+                <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
                     {
                         project.technologies.nodes.map(tech => {
                             return (

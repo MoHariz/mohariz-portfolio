@@ -59,7 +59,7 @@ function ProjectCard({ title, slug, featuredImage, technologies }: ProjectNodePr
                 />
                 <div className="lg:py-8">
                     <Typography variant="h2">{title}</Typography>
-                    <div className="flex flex-wrap gap-2 lg:my-4">
+                    <div className="flex flex-wrap gap-2 lg:my-4 my-2">
                         {
                             technologies.nodes.map(tech => {
                                 return (
