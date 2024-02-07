@@ -35,7 +35,7 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
     const project = data.project;
 
     return (
-        <PageWrapper hideFooter>
+        <PageWrapper>
             <>
                 <Link to="/projects">&#8592; Back</Link>
                 {project.featuredImage && <img className="w-full object-cover rounded-md mt-8 border-solid border border-black dark:border-white" src={project.featuredImage.node.sourceUrl} alt={project.featuredImage.node.altText} />}
