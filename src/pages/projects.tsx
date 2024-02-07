@@ -31,7 +31,7 @@ type ProjectsPageProps = {
 export default function ProjectsPage({ data }: ProjectsPageProps) {
 
     return (
-        <PageWrapper hideFooter>
+        <PageWrapper>
             <>
                 <Typography className="mb-8" variant="h1">Projects</Typography>
                 <div className="flex flex-col lg:gap-8 sm:gap-20 gap-20 mb-8">

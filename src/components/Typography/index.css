@@ -39,6 +39,28 @@
 }
 
 @media (max-width: 768px) {
+    .typography-h1 {
+        font-size: 2.2rem;
+    }
+    .typography-h2 {
+        font-size: 1.8rem;
+    }
+    .typography-h3 {
+        font-size: 1.6rem;
+    }
+    .typography-h4 {
+        font-size: 1.4rem;
+    }
+    .typography-h5 {
+        font-size: 1.2rem;
+    }
+    .typography-h6 {
+        font-size: 1rem;
+    }
+    .typography-p {
+        font-size: 0.9rem;
+    }
+
     .typography-h1,
     .typography-h2,
     .typography-h3,
@@ -46,6 +68,6 @@
     .typography-h5,
     .typography-h6,
     .typography-p {
-        line-height: 1.6;
+        line-height: 1.4;
     }
 }

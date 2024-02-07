@@ -5,7 +5,15 @@ import Hero from "../components/Hero";
 
 const IndexPage: React.FC = () => {
   return (
-    <PageWrapper>
+    <PageWrapper 
+      hideFooter 
+      pageStyles={{
+        minHeight: 'calc(100vh - 57px)',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+      }}
+    >
       <>
         <Hero />
       </>
