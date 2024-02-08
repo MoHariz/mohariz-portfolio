@@ -6,6 +6,11 @@
     text-decoration: underline;
 }
 
+.project-content > figure > figcaption {
+    font-style: italic;
+    text-align: center;
+}
+
 .project-links > a {
     font-weight: bold;
 }
