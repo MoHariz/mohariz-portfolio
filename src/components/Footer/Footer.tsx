@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faFile } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'gatsby';
 
 const Footer: React.FC = () => {
@@ -13,6 +14,9 @@ const Footer: React.FC = () => {
         <div className='flex gap-4'>
           <Link className="relative" target="_blank" to={process.env.GATSBY_LINKEDIN_URL || ""}>
             <FontAwesomeIcon className="w-5 h-5" icon={faLinkedin} />
+          </Link>
+          <Link className="relative" target="_blank" to={process.env.GATSBY_GITHUB_LINK || ""}>
+            <FontAwesomeIcon className="w-5 h-5" icon={faGithub} />
           </Link>
           <Link target="_blank" to={process.env.GATSBY_RESUME_LINK || ""}>
             <FontAwesomeIcon className="w-5 h-5" icon={faFile} />

@@ -3,6 +3,7 @@ import * as React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faFile } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { Tooltip } from '@chakra-ui/react';
 import { Link } from "gatsby";
 import Typography from "../Typography";
@@ -37,6 +38,11 @@ const Hero: React.FC = () => {
                 <Link className="relative" target="_blank" to={process.env.GATSBY_LINKEDIN_URL || ""}>
                     <Tooltip label='LinkedIn'>
                         <FontAwesomeIcon className="w-8 h-8" icon={faLinkedin} />
+                    </Tooltip>
+                </Link>
+                <Link className="relative" target="_blank" to={process.env.GATSBY_GITHUB_LINK || ""}>
+                    <Tooltip label='Github'>
+                        <FontAwesomeIcon className="w-8 h-8" icon={faGithub} />
                     </Tooltip>
                 </Link>
                 <Link target="_blank" to={process.env.GATSBY_RESUME_LINK || ""}>
