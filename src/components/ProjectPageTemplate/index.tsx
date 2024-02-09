@@ -4,6 +4,7 @@ import Typography from "../Typography";
 import { HeadFC, graphql, Link } from "gatsby";
 import "./index.css";
 import { Tag } from '@chakra-ui/react'
+import AnimateOnScroll from "../../AnimateOnScroll";
 
 type ProjectPageTemplateProps = {
     data: {
@@ -67,7 +68,9 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
                         )
                     }
                 </div>
-                <div className="project-content mb-8" dangerouslySetInnerHTML={{ __html: project.content }} />
+                <AnimateOnScroll oneDirectional animationName="fade-up" animationDuration="1s" animationDelay="0.5s">
+                    <div className="project-content mb-8" dangerouslySetInnerHTML={{ __html: project.content }} />
+                </AnimateOnScroll>
             </>
         </PageWrapper>
     );

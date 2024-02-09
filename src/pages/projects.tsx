@@ -3,6 +3,7 @@ import PageWrapper from "../components/PageWrapper";
 import { HeadFC, Link, graphql } from "gatsby";
 import Typography from "../components/Typography";
 import { Tag } from '@chakra-ui/react'
+import AnimateOnScroll from "../AnimateOnScroll";
 
 type ProjectNodeProps = {
     id: string;
@@ -51,27 +52,29 @@ export default function ProjectsPage({ data }: ProjectsPageProps) {
 function ProjectCard({ title, slug, featuredImage, technologies }: ProjectNodeProps) {
 
     return (
-        <Link to={slug}>
-             <div className="lg:flex lg:gap-4 hover:-translate-y-1 hover:scale-105 duration-200">
-                <img 
-                    className="object-cover lg:w-1/2 rounded-md border border-solid border-black dark:border-white"
-                    src={featuredImage?.node.sourceUrl} alt={featuredImage?.node.altText} 
-                />
-                <div className="lg:py-8">
-                    <Typography variant="h2">{title}</Typography>
-                    <div className="flex flex-wrap gap-2 lg:my-4 my-2">
-                        {
-                            technologies.nodes.map(tech => {
-                                return (
-                                    <Tag key={tech.name} colorScheme="teal">{tech.name}</Tag>
-                                )
-                            })
-                        }
+        <AnimateOnScroll oneDirectional animationName="fade-up" animationDuration="1s" animationDelay="0.2s">
+            <Link to={slug}>
+                <div className="lg:flex lg:gap-4 hover:-translate-y-1 hover:scale-105 duration-200">
+                    <img 
+                        className="object-cover lg:w-1/2 rounded-md border border-solid border-black dark:border-white"
+                        src={featuredImage?.node.sourceUrl} alt={featuredImage?.node.altText} 
+                    />
+                    <div className="lg:py-8">
+                        <Typography variant="h2">{title}</Typography>
+                        <div className="flex flex-wrap gap-2 lg:my-4 my-2">
+                            {
+                                technologies.nodes.map(tech => {
+                                    return (
+                                        <Tag key={tech.name} colorScheme="teal">{tech.name}</Tag>
+                                    )
+                                })
+                            }
+                        </div>
+                        <Link className="font-bold hover:underline" to={slug}>Read more &#8594;</Link>
                     </div>
-                    <Link className="font-bold hover:underline" to={slug}>Read more &#8594;</Link>
                 </div>
-            </div>
-        </Link>
+            </Link>
+        </AnimateOnScroll>
     )
 }
 
