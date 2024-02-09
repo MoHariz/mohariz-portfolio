@@ -76,6 +76,7 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
 export const Head: HeadFC = (data) => {
     return (
         <>
+            <html lang="en" />
             <title>{`Muhammad Hariz | Projects - ${data.data.project.title}`}</title>
             <meta name="description" content={data.data.project.excerpt.replace(/<[^>]*>?/gm, '')} />
         </>

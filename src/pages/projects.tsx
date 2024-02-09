@@ -75,7 +75,15 @@ function ProjectCard({ title, slug, featuredImage, technologies }: ProjectNodePr
     )
 }
 
-export const Head: HeadFC = () => <title>Muhammad Hariz | Projects</title>
+export const Head: HeadFC = () => {
+
+    return (
+        <>
+            <html lang="en" />
+            <title>Muhammad Hariz | Projects</title>
+        </>
+    )
+}
 
 export const pageQuery = graphql`
   query {

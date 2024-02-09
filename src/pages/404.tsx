@@ -44,4 +44,11 @@ const NotFoundPage: React.FC = () => {
 
 export default NotFoundPage
 
-export const Head: HeadFC = () => <title>Page Not Found</title>
+export const Head: HeadFC = () => {
+  return (
+    <>
+      <html lang="en" />
+      <title>Page Not Found</title>
+    </>
+  )
+}

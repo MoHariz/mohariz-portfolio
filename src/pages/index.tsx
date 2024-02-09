@@ -26,6 +26,7 @@ export default IndexPage
 export const Head: HeadFC = () => {
   return (
     <>
+      <html lang="en" />
       <title>Muhammad Hariz | Home Page</title>
       <meta name="description" content="Muhammad Hariz - Full Stack Software Engineer with interests in front-end development, software infrastructure, and data analytics." />
     </>
