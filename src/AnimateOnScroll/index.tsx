@@ -10,6 +10,7 @@ type AnimateOnScrollProps = {
   animationDuration?: string; // e.g. '1s', '500ms'
   animationTimingFunction?: string; // e.g. 'ease-out', 'linear'
   animationDelay?: string; // e.g. '1s', '500ms'
+  threshold?: number;
 }
 
 /**
@@ -22,6 +23,7 @@ type AnimateOnScrollProps = {
  * @param {string} animationDuration - The duration of the animation
  * @param {string} animationTimingFunction - The timing function for the animation
  * @param {string} animationDelay - The delay before the animation starts
+ * @param {number} threshold - The threshold for the intersection
  * @return {ReactElement} The animated element
  */
 const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
@@ -30,9 +32,9 @@ const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
   animationName = 'fade-in',
   animationDuration = '1s',
   animationTimingFunction = 'ease-out',
-  animationDelay = '0s'
+  animationDelay = '0s',
+  threshold = 0.1 // Setting a default threshold of 10%
 }) => {
-  // Assume the element is visible if oneDirectional is false, otherwise assume it's not visible.
   const [isVisible, setIsVisible] = useState(!oneDirectional);
   const domRef = useRef<HTMLDivElement>(null);
 
@@ -43,7 +45,8 @@ const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
           setIsVisible(entry.isIntersecting);
         }
       });
-    });
+    }, { threshold }); // Using threshold in the options object
+
     const { current } = domRef;
     if (current) {
       observer.observe(current);
@@ -53,7 +56,8 @@ const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
         observer.unobserve(current);
       }
     };
-  }, [oneDirectional]);
+  }, [oneDirectional, threshold]); // Adding threshold as a dependency
+
 
   return (
     <div
@@ -63,7 +67,7 @@ const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
         animationTimingFunction,
         animationDelay,
       }}
-      className={`transition-opacity ${isVisible ? `aos-${animationName}` : 'opacity-0'}`}
+      className={`${!isVisible ? 'aos-hidden' : ''} ${isVisible ? `aos-${animationName}` : ''}`}
     >
       {children}
     </div>

@@ -1,3 +1,7 @@
+.aos-hidden {
+    opacity: 0;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -36,5 +40,3 @@
     animation-duration: var(--fade-up-duration, 1s);
     animation-delay: var(--fade-up-delay, 0s);
 }
-
-

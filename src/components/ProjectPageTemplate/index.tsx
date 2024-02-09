@@ -68,7 +68,7 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
                         )
                     }
                 </div>
-                <AnimateOnScroll oneDirectional animationName="fade-up" animationDuration="1s" animationDelay="0.5s">
+                <AnimateOnScroll oneDirectional animationName="fade-up" animationDuration="1s" animationDelay="0.5s" threshold={0.1}>
                     <div className="project-content mb-8" dangerouslySetInnerHTML={{ __html: project.content }} />
                 </AnimateOnScroll>
             </>
