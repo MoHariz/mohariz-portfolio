@@ -23,4 +23,11 @@ const IndexPage: React.FC = () => {
 
 export default IndexPage
 
-export const Head: HeadFC = () => <title>Muhammad Hariz | Home Page</title>
+export const Head: HeadFC = () => {
+  return (
+    <>
+      <title>Muhammad Hariz | Home Page</title>
+      <meta name="description" content="Muhammad Hariz - Full Stack Software Engineer with interests in front-end development, software infrastructure, and data analytics." />
+    </>
+  )
+}

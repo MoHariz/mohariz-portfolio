@@ -11,6 +11,7 @@ type ProjectPageTemplateProps = {
             id: string;
             title: string;
             content: string;
+            excerpt: string;
             projectLinks: {
                 github?: string;
                 website?: string;
@@ -74,7 +75,10 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
 
 export const Head: HeadFC = (data) => {
     return (
-        <title>{`Muhammad Hariz | Projects - ${data.data.project.title}`}</title>
+        <>
+            <title>{`Muhammad Hariz | Projects - ${data.data.project.title}`}</title>
+            <meta name="description" content={data.data.project.excerpt.replace(/<[^>]*>?/gm, '')} />
+        </>
     );
 }
 
@@ -89,6 +93,7 @@ export const pageQuery = graphql`
         }
         title
         content
+        excerpt
         projectLinks {
           github
           website
