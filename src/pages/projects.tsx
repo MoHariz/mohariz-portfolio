@@ -34,7 +34,7 @@ export default function ProjectsPage({ data }: ProjectsPageProps) {
     return (
         <PageWrapper>
             <>
-                <Typography className="mb-8" variant="h1">PROJECTS</Typography>
+                <Typography className="mb-8" variant="h1" bold>PROJECTS</Typography>
                 <div className="flex flex-col lg:gap-8 sm:gap-20 gap-20 mb-8">
                     {
                         data.projects.nodes.map(project => {
@@ -60,7 +60,7 @@ function ProjectCard({ title, slug, featuredImage, technologies }: ProjectNodePr
                         src={featuredImage?.node.sourceUrl} alt={featuredImage?.node.altText} 
                     />
                     <div className="lg:py-8">
-                        <Typography variant="h2">{title}</Typography>
+                        <Typography variant="h2" bold>{title}</Typography>
                         <div className="flex flex-wrap gap-2 lg:my-4 my-2">
                             {
                                 technologies.nodes.map(tech => {
