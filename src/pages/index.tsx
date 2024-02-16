@@ -5,6 +5,7 @@ import Hero from "../components/Hero";
 import SkillSets, { SkillSetNodeProps } from "../components/SkillSets/index";
 import Experiences, { ExperienceNodeProps } from "../components/Experiences/index";
 import Education from "../components/Education";
+import AboutMe, { AboutMeProps } from "../components/AboutMe";
 
 
 type HomePageProps = {
@@ -15,6 +16,7 @@ type HomePageProps = {
     experiences: {
       nodes: ExperienceNodeProps[];
     };
+    aboutMe: AboutMeProps;
   };
 };
 
@@ -33,6 +35,7 @@ export default function IndexPage({ data }: HomePageProps) {
         <SkillSets skillSets={data.skillSets.nodes} />
         <Experiences experiences={data.experiences.nodes} />
         <Education/>
+        <AboutMe featuredImage={data.aboutMe.featuredImage} content={data.aboutMe.content} />
       </>
     </PageWrapper>
   )
@@ -72,6 +75,15 @@ export const homePageQuery = graphql`
         }
         content
       }
+    }
+    aboutMe: wpPage(id: {eq: "cG9zdDoyMDg="}) {
+      featuredImage {
+        node {
+          altText
+          sourceUrl
+        }
+      }
+      content
     }
   }
 `
