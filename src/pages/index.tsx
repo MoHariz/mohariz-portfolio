@@ -3,12 +3,17 @@ import PageWrapper from "../components/PageWrapper"
 import { HeadFC, graphql } from "gatsby";
 import Hero from "../components/Hero";
 import SkillSets, { SkillSetNodeProps } from "../components/SkillSets/index";
+import Experiences, { ExperienceNodeProps } from "../components/Experiences/index";
+import Education from "../components/Education";
 
 
 type HomePageProps = {
   data: {
     skillSets: {
       nodes: SkillSetNodeProps[];
+    };
+    experiences: {
+      nodes: ExperienceNodeProps[];
     };
   };
 };
@@ -26,6 +31,8 @@ export default function IndexPage({ data }: HomePageProps) {
       <>
         <Hero />
         <SkillSets skillSets={data.skillSets.nodes} />
+        <Experiences experiences={data.experiences.nodes} />
+        <Education/>
       </>
     </PageWrapper>
   )
@@ -43,7 +50,7 @@ export const Head: HeadFC = () => {
 
 export const homePageQuery = graphql`
   query {
-    skillSets: allWpSkillSet(sort: {orderIndex: {orderIndex: ASC}}) {
+    skillSets: allWpSkillSet(sort: {skillSetDetail: {orderIndex: ASC}}) {
       nodes {
         title
         skills {
@@ -51,6 +58,19 @@ export const homePageQuery = graphql`
             name
           }
         }
+      }
+    }
+    experiences: allWpExperience(sort: {experienceDetail: {orderIndex: ASC}}) {
+      nodes {
+        title
+        experienceDetail {
+          companyUrl
+          companyLocation
+          roleTitle
+          startDate
+          endDate
+        }
+        content
       }
     }
   }

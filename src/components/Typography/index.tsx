@@ -8,11 +8,12 @@ type TypographyProps = {
     children: React.ReactNode;
     style?: React.CSSProperties;
     bold?: boolean;
+    italic?: boolean;
 };
 
-const Typography: React.FC<TypographyProps> = ({ className, variant = 'p', children, style, bold }) => {
+const Typography: React.FC<TypographyProps> = ({ className, variant = 'p', children, style, bold, italic }) => {
     const Tag = variant; // dynamically set the HTML tag based on the variant
-    return <Tag className={cs(className, `typography-${variant}`)} style={{ ...style, fontWeight: bold ? 'bold' : 'normal' }}>{children}</Tag>;
+    return <Tag className={cs(className, `typography-${variant}`)} style={{ ...style, fontWeight: bold ? 'bold' : 'normal', fontStyle: italic ? 'italic' : 'normal' }}>{children}</Tag>;
 };
 
 export default Typography;

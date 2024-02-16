@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
                     justifyContent: 'center',
                 }}
             >
-                <Typography variant="h1">Hi, I'm Muhammad.</Typography>
+                <Typography variant="h1" bold>Hi, I'm Muhammad.</Typography>
                 <Typography variant="h3" className="mt-4">I am a full-stack software engineer with interests in front-end development, software infrastructure, and data analytics.</Typography>
                 <Typography variant="h3" className="mt-4">
                     Let's {' '}
