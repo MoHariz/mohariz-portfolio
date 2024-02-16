@@ -1,14 +1,23 @@
 import * as React from "react"
 import PageWrapper from "../components/PageWrapper"
-import { HeadFC } from "gatsby";
+import { HeadFC, graphql } from "gatsby";
 import Hero from "../components/Hero";
+import SkillSets, { SkillSetNodeProps } from "../components/SkillSets/index";
 
-const IndexPage: React.FC = () => {
+
+type HomePageProps = {
+  data: {
+    skillSets: {
+      nodes: SkillSetNodeProps[];
+    };
+  };
+};
+
+
+export default function IndexPage({ data }: HomePageProps) {
   return (
     <PageWrapper 
-      hideFooter 
       pageStyles={{
-        minHeight: 'calc(100vh - 57px)',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -16,12 +25,11 @@ const IndexPage: React.FC = () => {
     >
       <>
         <Hero />
+        <SkillSets skillSets={data.skillSets.nodes} />
       </>
     </PageWrapper>
   )
 }
-
-export default IndexPage
 
 export const Head: HeadFC = () => {
   return (
@@ -32,3 +40,18 @@ export const Head: HeadFC = () => {
     </>
   )
 }
+
+export const homePageQuery = graphql`
+  query {
+    skillSets: allWpSkillSet(sort: {orderIndex: {orderIndex: ASC}}) {
+      nodes {
+        title
+        skills {
+          nodes {
+            name
+          }
+        }
+      }
+    }
+  }
+`

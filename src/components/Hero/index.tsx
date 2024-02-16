@@ -21,9 +21,16 @@ const Hero: React.FC = () => {
     ];
 
     return (
-        <AnimateOnScroll animationName="fade-in" animationDuration="1s" animationDelay="0.5s">
-            <div>
-                <Typography variant="h1" >Hi, I'm Muhammad.</Typography>
+        <AnimateOnScroll oneDirectional animationName="fade-in" animationDuration="1s" animationDelay="0.5s">
+            <div
+                style={{
+                    minHeight: 'calc(100vh - 57px)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                }}
+            >
+                <Typography variant="h1">Hi, I'm Muhammad.</Typography>
                 <Typography variant="h3" className="mt-4">I am a full-stack software engineer with interests in front-end development, software infrastructure, and data analytics.</Typography>
                 <Typography variant="h3" className="mt-4">
                     Let's {' '}
