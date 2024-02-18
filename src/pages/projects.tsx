@@ -4,6 +4,7 @@ import { HeadFC, Link, graphql } from "gatsby";
 import Typography from "../components/Typography";
 import { Tag } from '@chakra-ui/react'
 import AnimateOnScroll from "../AnimateOnScroll";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 type ProjectNodeProps = {
     id: string;
@@ -11,7 +12,8 @@ type ProjectNodeProps = {
     slug: string;
     featuredImage?: {
         node: {
-            sourceUrl: string;
+            altText: string;
+            gatsbyImage: any;
         }
     }
     technologies: {
@@ -51,15 +53,18 @@ export default function ProjectsPage({ data }: ProjectsPageProps) {
 
 function ProjectCard({ title, slug, featuredImage, technologies }: ProjectNodeProps) {
 
+    const image = getImage(featuredImage?.node);
+
     return (
         <AnimateOnScroll oneDirectional animationName="fade-up" animationDuration="1s" animationDelay="0.2s">
             <Link to={slug}>
                 <div className="lg:flex lg:gap-4 hover:-translate-y-1 hover:scale-105 duration-200">
-                    <img 
+                    {/* <img 
                         className="object-cover lg:w-1/2 rounded-md border border-solid border-black dark:border-white"
                         src={featuredImage?.node.sourceUrl} alt={featuredImage?.node.altText} 
-                    />
-                    <div className="lg:py-8">
+                    /> */}
+                    <GatsbyImage image={image} alt={featuredImage?.node.altText} className="object-cover lg:w-1/2 rounded-md border border-solid border-black dark:border-white" />
+                    <div className="lg:py-8 lg:w-1/2">
                         <Typography variant="h2" bold>{title}</Typography>
                         <div className="flex flex-wrap gap-2 lg:my-4 my-2">
                             {
@@ -97,8 +102,8 @@ export const pageQuery = graphql`
             slug
             featuredImage {
                 node {
-                  sourceUrl
                   altText
+                  gatsbyImage(width: 863, height: 430, placeholder: BLURRED, formats: AUTO)
                 }
             }
             technologies {
