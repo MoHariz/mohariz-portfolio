@@ -103,7 +103,7 @@ export const pageQuery = graphql`
             featuredImage {
                 node {
                   altText
-                  gatsbyImage(width: 863, height: 430, placeholder: BLURRED, formats: AUTO)
+                  gatsbyImage(width: 863, height: 430, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
                 }
             }
             technologies {
