@@ -34,7 +34,7 @@
 .typography-h5,
 .typography-h6,
 .typography-p {
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, poppins, sans-serif;
     color: "#232129";
 }
 
