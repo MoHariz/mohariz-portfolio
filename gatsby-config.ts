@@ -75,7 +75,15 @@ const config: GatsbyConfig = {
                     // delayOnRouteUpdate: 0,
                 },
             },
-        }
+        },
+        {
+            resolve: `gatsby-plugin-google-fonts`,
+            options: {
+              fonts: [
+                `poppins\:300,400,400i,700`,
+              ],
+              display: 'swap'}
+          }
     ],
 };
 
