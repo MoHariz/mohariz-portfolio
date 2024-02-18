@@ -80,7 +80,7 @@ export const homePageQuery = graphql`
       featuredImage {
         node {
           altText
-          sourceUrl
+          gatsbyImage(width: 400, height: 400, placeholder: BLURRED, formats: AUTO)
         }
       }
       content

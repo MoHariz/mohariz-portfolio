@@ -28,11 +28,12 @@ export default function Experiences({ experiences }: ExperiencesProps) {
     return (
         <div className="py-8">
             <Typography className="mb-8" variant="h3" bold>EXPERIENCES</Typography>
-            <AnimateOnScroll oneDirectional animationName="fade-up" animationDuration="1s" animationDelay="0.2s">
-                <div className="flex flex-col lg:gap-8 gap-10">
-                    {
-                        experiences.map(experience => {
-                            return (
+            <div className="flex flex-col lg:gap-8 gap-10">
+                {
+                    experiences.map(experience => {
+                        return (
+                            <AnimateOnScroll oneDirectional animationName="fade-up" animationDuration="1s" animationDelay="0.2s">
+
                                 <div className="flex flex-col lg:flex-row gap-2 sm:gap-2 md:gap-4 lg:gap-0" key={experience.title}>
                                     <div className="w-full lg:w-1/4">
                                         <Typography variant="h6" italic>{experience.experienceDetail.startDate} - {experience.experienceDetail.endDate}</Typography>
@@ -40,7 +41,7 @@ export default function Experiences({ experiences }: ExperiencesProps) {
                                     </div>
                                     <div className="w-full lg:w-3/4 rounded-md border border-solid border-black dark:border-white p-4">
                                         <Typography variant="h6">
-                                            {experience.experienceDetail.companyUrl && 
+                                            {experience.experienceDetail.companyUrl &&
                                                 <Link className="font-bold hover:underline p-2" to={experience.experienceDetail.companyUrl} target="_blank">
                                                     <FontAwesomeIcon className="w-3 h-3" icon={faExternalLinkAlt} />
                                                 </Link>
@@ -50,11 +51,12 @@ export default function Experiences({ experiences }: ExperiencesProps) {
                                         <div className="experience-content" dangerouslySetInnerHTML={{ __html: experience.content }} />
                                     </div>
                                 </div>
-                            )
-                        })
-                    }
-                </div>
-            </AnimateOnScroll>
+
+                            </AnimateOnScroll>
+                        )
+                    })
+                }
+            </div>
         </div>
     )
 }

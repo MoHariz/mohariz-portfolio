@@ -5,6 +5,7 @@ import { HeadFC, graphql, Link } from "gatsby";
 import "./index.css";
 import { Tag } from '@chakra-ui/react'
 import AnimateOnScroll from "../../AnimateOnScroll";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 type ProjectPageTemplateProps = {
     data: {
@@ -25,8 +26,8 @@ type ProjectPageTemplateProps = {
             }
             featuredImage?: {
                 node: {
-                    sourceUrl: string;
                     altText: string;
+                    gatsbyImage: any;
                 }
             }
         }
@@ -36,11 +37,17 @@ type ProjectPageTemplateProps = {
 export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) {
     const project = data.project;
 
+    const image = getImage(project.featuredImage?.node.gatsbyImage);
+
+    console.log(project)
+
     return (
         <PageWrapper>
             <>
                 <Link to="/projects" className="text-bold">&#8592; Back</Link>
-                {project.featuredImage && <img className="w-full object-cover rounded-md mt-8 border-solid border border-black dark:border-white" src={project.featuredImage.node.sourceUrl} alt={project.featuredImage.node.altText} />}
+                {project.featuredImage && (
+                    <GatsbyImage image={image} alt={project.featuredImage.node.altText} className="w-full object-cover rounded-md mt-8 border-solid border border-black dark:border-white" />
+                )}
                 <Typography className="mb-4 mt-8" variant="h1" bold>{project.title}</Typography>
                 <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
                     {
@@ -92,7 +99,8 @@ export const pageQuery = graphql`
         id
         featuredImage {
           node {
-            sourceUrl
+            altText
+            gatsbyImage(width: 880, height: 438, placeholder: BLURRED, formats: AUTO)
           }
         }
         title
