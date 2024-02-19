@@ -28,34 +28,36 @@ const Hero: React.FC = () => {
                 justifyContent: 'center',
             }}
         >
-            <Typography variant="h1" bold>Hi, I'm Muhammad.</Typography>
-            <Typography variant="h3" className="mt-4">I am a full-stack software engineer with interests in front-end development, software infrastructure, and data analytics.</Typography>
-            <Typography variant="h3" className="mt-4">
-                Let's {' '}
-                <Typewriter
-                    words={verbs}
-                    loop={5}
-                    cursor
-                    cursorStyle='|'
-                />
-            </Typography>
+            <div>
+                <Typography variant="h1" bold>Hi, I'm Muhammad.</Typography>
+                <Typography variant="h3" className="mt-4">I am a full-stack software engineer with interests in front-end development, software infrastructure, and data analytics.</Typography>
+                <Typography variant="h3" className="mt-4">
+                    Let's {' '}
+                    <Typewriter
+                        words={verbs}
+                        loop={5}
+                        cursor
+                        cursorStyle='|'
+                    />
+                </Typography>
 
-            <div className="flex gap-4 lg:mt-30 md:mt-20 mt-10">
-                <Link className="relative" target="_blank" to={process.env.GATSBY_LINKEDIN_URL || ""}>
-                    <Tooltip label='LinkedIn'>
-                        <FontAwesomeIcon className="w-8 h-8" icon={faLinkedin} />
-                    </Tooltip>
-                </Link>
-                <Link className="relative" target="_blank" to={process.env.GATSBY_GITHUB_LINK || ""}>
-                    <Tooltip label='Github'>
-                        <FontAwesomeIcon className="w-8 h-8" icon={faGithub} />
-                    </Tooltip>
-                </Link>
-                <Link target="_blank" to={process.env.GATSBY_RESUME_LINK || ""}>
-                    <Tooltip label='Resume'>
-                        <FontAwesomeIcon className="w-8 h-8" icon={faFile} />
-                    </Tooltip>
-                </Link>
+                <div className="flex gap-4 lg:mt-30 md:mt-20 mt-10">
+                    <Link className="relative" target="_blank" to={process.env.GATSBY_LINKEDIN_URL || ""}>
+                        <Tooltip label='LinkedIn'>
+                            <FontAwesomeIcon className="w-8 h-8" icon={faLinkedin} />
+                        </Tooltip>
+                    </Link>
+                    <Link className="relative" target="_blank" to={process.env.GATSBY_GITHUB_LINK || ""}>
+                        <Tooltip label='Github'>
+                            <FontAwesomeIcon className="w-8 h-8" icon={faGithub} />
+                        </Tooltip>
+                    </Link>
+                    <Link target="_blank" to={process.env.GATSBY_RESUME_LINK || ""}>
+                        <Tooltip label='Resume'>
+                            <FontAwesomeIcon className="w-8 h-8" icon={faFile} />
+                        </Tooltip>
+                    </Link>
+                </div>
             </div>
         </div>
     )

@@ -59,10 +59,6 @@ function ProjectCard({ title, slug, featuredImage, technologies }: ProjectNodePr
         <AnimateOnScroll oneDirectional animationName="fade-up" animationDuration="1s" animationDelay="0.2s">
             <Link to={slug}>
                 <div className="lg:flex lg:gap-4 hover:-translate-y-1 hover:scale-105 duration-200">
-                    {/* <img 
-                        className="object-cover lg:w-1/2 rounded-md border border-solid border-black dark:border-white"
-                        src={featuredImage?.node.sourceUrl} alt={featuredImage?.node.altText} 
-                    /> */}
                     <GatsbyImage image={image} alt={featuredImage?.node.altText} className="object-cover lg:w-1/2 rounded-md border border-solid border-black dark:border-white" />
                     <div className="lg:py-8 lg:w-1/2">
                         <Typography variant="h2" bold>{title}</Typography>
