@@ -85,6 +85,7 @@ export const Head: HeadFC = () => {
         <>
             <html lang="en" />
             <title>Muhammad Hariz | Projects</title>
+            <meta name="description" content="A list of my professional and personal projects." />
         </>
     )
 }
