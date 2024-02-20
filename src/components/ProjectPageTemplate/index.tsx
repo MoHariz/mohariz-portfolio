@@ -39,8 +39,6 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
 
     const image = getImage(project.featuredImage?.node.gatsbyImage);
 
-    console.log(project)
-
     return (
         <PageWrapper>
             <>
