@@ -42,7 +42,7 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
     return (
         <PageWrapper>
             <>
-                <Link to="/projects" className="text-bold">&#8592; Back</Link>
+                <Link to="/projects" className="font-bold hover:underline">&#8592; Back</Link>
                 {project.featuredImage && (
                     <GatsbyImage image={image} alt={project.featuredImage.node.altText} className="w-full object-cover rounded-md mt-8 border-solid border border-black dark:border-white" />
                 )}

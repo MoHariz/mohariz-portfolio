@@ -1,7 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import { useNotAtPageTop } from '../../hooks/ScrollBehaviorHooks';
-import './index.css';
 import ThemeToggle from '../ThemeToggle';
 
 const NavBar: React.FC = () => {

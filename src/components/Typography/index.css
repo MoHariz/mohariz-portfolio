@@ -27,17 +27,6 @@
     line-height: 1.6;
 }
 
-.typography-h1,
-.typography-h2,
-.typography-h3,
-.typography-h4,
-.typography-h5,
-.typography-h6,
-.typography-p {
-    font-family: -apple-system, BlinkMacSystemFont, poppins, sans-serif;
-    color: "#232129";
-}
-
 @media (max-width: 768px) {
     .typography-h1 {
         font-size: 2.2rem;

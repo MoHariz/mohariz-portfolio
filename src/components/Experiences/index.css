@@ -1,8 +1,3 @@
-.experience-content {
-    font-family: -apple-system, BlinkMacSystemFont, poppins, sans-serif;
-    color: "#232129";
-}
-
 .experience-content > ul {
     list-style-type: circle;
     padding-left: 50px;
