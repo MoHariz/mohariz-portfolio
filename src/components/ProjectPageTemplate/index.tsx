@@ -40,7 +40,11 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
     const image = getImage(project.featuredImage?.node.gatsbyImage);
 
     return (
-        <PageWrapper>
+        <PageWrapper
+            pageStyles={{
+                paddingTop: "57px",
+            }}
+        >
             <>
                 <Link to="/projects" className="font-bold hover:underline">&#8592; Back</Link>
                 {project.featuredImage && (

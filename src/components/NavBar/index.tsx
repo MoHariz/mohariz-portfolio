@@ -7,7 +7,7 @@ const NavBar: React.FC = () => {
   const isNotAtPageTop = useNotAtPageTop();
 
   return (
-    <nav className={"flex sticky w-full lg:px-40 md:px-20 sm:px-10 px-5 py-4 inset-x-0 top-0 z-50 backdrop-blur  duration-200 border-b" + (isNotAtPageTop ? " border-black dark:border-white" : " border-transparent")}>
+    <nav className={"flex fixed w-full lg:px-40 md:px-20 sm:px-10 px-5 py-4 inset-x-0 top-0 z-50 backdrop-blur  duration-200 border-b" + (isNotAtPageTop ? " border-black dark:border-white" : " border-transparent")}>
       <div className='flex justify-between items-center w-full' style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <ThemeToggle />
 

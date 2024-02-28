@@ -13,7 +13,7 @@ const PageWrapper: React.FC<PageWrapperProps> = ({ children, pageStyles, hideFoo
     <>
       <NavBar />
       <main
-        className='lg:px-40 md:px-20 sm:px-10 px-5 py-4'
+        className='lg:px-40 md:px-20 sm:px-10 px-5'
         style={{
           ...pageStyles,
           maxWidth: '1200px',

@@ -34,7 +34,11 @@ type ProjectsPageProps = {
 export default function ProjectsPage({ data }: ProjectsPageProps) {
 
     return (
-        <PageWrapper>
+        <PageWrapper
+            pageStyles={{
+                paddingTop: "57px",
+            }}
+        >
             <>
                 <Typography className="mb-8" variant="h1" bold>PROJECTS</Typography>
                 <div className="flex flex-col lg:gap-8 sm:gap-20 gap-20 mb-8">

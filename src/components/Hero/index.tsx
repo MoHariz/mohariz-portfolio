@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
     return (
         <div
             style={{
-                minHeight: 'calc(100vh - 57px)',
+                minHeight: '100svh',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
