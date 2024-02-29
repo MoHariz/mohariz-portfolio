@@ -29,6 +29,7 @@ export default function IndexPage({ data }: HomePageProps) {
         flexDirection: 'column',
         justifyContent: 'center',
       }}
+      addProgressBar
     >
       <>
         <Hero />

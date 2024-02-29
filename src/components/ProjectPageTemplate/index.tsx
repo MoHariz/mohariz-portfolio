@@ -38,7 +38,6 @@ type ProjectPageTemplateProps = {
 
 export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) {
     const project = data.project;
-
     const image = getImage(project.featuredImage?.node.gatsbyImage);
 
     return (
@@ -46,6 +45,7 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
             pageStyles={{
                 paddingTop: "57px",
             }}
+            addProgressBar
         >
             <>
                 <Link to="/projects" className="font-bold">&#8592; BACK</Link>
