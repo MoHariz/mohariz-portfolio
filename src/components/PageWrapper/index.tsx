@@ -3,7 +3,7 @@ import { PageProps } from 'gatsby';
 import NavBar from '../NavBar';
 import Footer from '../Footer/Footer';
 import { motion, useScroll } from "framer-motion";
-import "./index.css";
+import "./index.scss";
 
 type PageWrapperProps = {
   pageStyles?: React.CSSProperties;
