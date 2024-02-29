@@ -6,6 +6,8 @@ import "./index.css";
 import { Tag } from '@chakra-ui/react'
 import AnimateOnScroll from "../../AnimateOnScroll";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 type ProjectPageTemplateProps = {
     data: {
@@ -46,7 +48,7 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
             }}
         >
             <>
-                <Link to="/projects" className="font-bold hover:underline">&#8592; Back</Link>
+                <Link to="/projects" className="font-bold">&#8592; BACK</Link>
                 {project.featuredImage && (
                     <GatsbyImage image={image} alt={project.featuredImage.node.altText} className="w-full object-cover rounded-md mt-8 border-solid border border-black dark:border-white" />
                 )}
@@ -55,7 +57,7 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
                     {
                         project.technologies.nodes.map(tech => {
                             return (
-                                <Tag key={tech.name} colorScheme="teal">{tech.name}</Tag>
+                                <Tag key={tech.name} variant="outline">{tech.name}</Tag>
                             )
                         })
                     }
@@ -63,17 +65,17 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
                 <div className="project-links flex flex-wrap gap-4 my-4 justify-center sm:justify-start">
                     {
                         project.projectLinks.github && (
-                            <Link to={project.projectLinks.github} target="_blank" rel="noreferrer">Github &#8594;</Link>
+                            <Link to={project.projectLinks.github} target="_blank" rel="noreferrer">Github <FontAwesomeIcon className="w-3 h-3" icon={faExternalLinkAlt} /></Link>
                         )
                     }
                     {
                         project.projectLinks.website && (
-                            <Link to={project.projectLinks.website} target="_blank" rel="noreferrer">Website &#8594;</Link>
+                            <Link to={project.projectLinks.website} target="_blank" rel="noreferrer">Website <FontAwesomeIcon className="w-3 h-3" icon={faExternalLinkAlt} /></Link>
                         )
                     }
                     {
                         project.projectLinks.publication && (
-                            <Link to={project.projectLinks.publication} target="_blank" rel="noreferrer">Publication &#8594;</Link>
+                            <Link to={project.projectLinks.publication} target="_blank" rel="noreferrer">Publication <FontAwesomeIcon className="w-3 h-3" icon={faExternalLinkAlt} /></Link>
                         )
                     }
                 </div>

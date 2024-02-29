@@ -70,12 +70,12 @@ function ProjectCard({ title, slug, featuredImage, technologies }: ProjectNodePr
                             {
                                 technologies.nodes.map(tech => {
                                     return (
-                                        <Tag key={tech.name} colorScheme="teal">{tech.name}</Tag>
+                                        <Tag key={tech.name} variant="outline">{tech.name}</Tag>
                                     )
                                 })
                             }
                         </div>
-                        <Link className="font-bold hover:underline" to={slug}>Read more &#8594;</Link>
+                        <Link className="font-bold" to={slug}>READ MORE &#8594;</Link>
                     </div>
                 </div>
             </Link>

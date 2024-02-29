@@ -37,7 +37,7 @@ export default function Experiences({ experiences }: ExperiencesProps) {
                                 <div className="flex flex-col lg:flex-row gap-2 sm:gap-2 md:gap-4 lg:gap-0" key={experience.title}>
                                     <div className="w-full lg:w-1/4">
                                         <Typography variant="h6" italic>{experience.experienceDetail.startDate} - {experience.experienceDetail.endDate}</Typography>
-                                        <Tag colorScheme="teal">{experience.experienceDetail.companyLocation}</Tag>
+                                        <Tag variant="outline">{experience.experienceDetail.companyLocation}</Tag>
                                     </div>
                                     <div className="w-full lg:w-3/4 rounded-md border border-solid border-black dark:border-white p-4">
                                         <Typography variant="h6">

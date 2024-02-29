@@ -9,10 +9,9 @@
 
 .project-links > a {
     font-weight: bold;
-}
-
-.project-links > a:hover {
-    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
 }
 
 h1 {

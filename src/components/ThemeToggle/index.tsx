@@ -17,7 +17,7 @@ export default function ThemeToggle() {
   return (
     <div className='flex items-center gap-2'>
       <Switch
-        colorScheme='teal'
+        colorScheme='yellow'
         isChecked={colorMode === 'dark'}
         onChange={toggleColorMode}
         aria-label="Toggle dark mode"
