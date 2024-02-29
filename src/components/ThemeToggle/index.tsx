@@ -22,7 +22,7 @@ export default function ThemeToggle() {
         onChange={toggleColorMode}
         aria-label="Toggle dark mode"
       />
-      <FontAwesomeIcon icon={colorMode === 'dark' ? faSun : faMoon} />
+      <FontAwesomeIcon icon={colorMode === 'dark' ? faMoon : faSun} />
     </div>
   );
 };
