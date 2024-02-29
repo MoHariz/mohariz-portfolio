@@ -70,7 +70,7 @@ function ProjectCard({ title, slug, featuredImage, technologies }: ProjectNodePr
                             {
                                 technologies.nodes.map(tech => {
                                     return (
-                                        <Tag key={tech.name} variant="outline">{tech.name}</Tag>
+                                        <Tag key={tech.name}>{tech.name}</Tag>
                                     )
                                 })
                             }

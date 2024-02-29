@@ -32,7 +32,7 @@ export default function SkillSets({ skillSets }: SkillSetsProps) {
                                         {
                                             skillSet.skills.nodes.map(skill => {
                                                 return (
-                                                    <Tag key={skill.name} variant="outline">{skill.name}</Tag>
+                                                    <Tag key={skill.name}>{skill.name}</Tag>
                                                 )
                                             })
                                         }
