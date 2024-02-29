@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { Tooltip } from "@chakra-ui/react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import "./index.css";
+import "./index.scss";
 
 export type AboutMeProps = {
     featuredImage: {
