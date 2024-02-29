@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import "./index.css";
+import "./index.scss";
 
 type AnimationName = 'fade-in' | 'fade-up';
 

@@ -20,6 +20,7 @@ const config: GatsbyConfig = {
         "gatsby-transformer-sharp",
         "gatsby-plugin-postcss",
         "gatsby-plugin-sitemap",
+        "gatsby-plugin-sass",
         {
             resolve: "gatsby-source-filesystem",
             options: {

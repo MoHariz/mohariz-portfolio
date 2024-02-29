@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { Tag } from '@chakra-ui/react'
-import "./index.css";
+import "./index.scss";
 
 export type ExperienceNodeProps = {
     title: string;

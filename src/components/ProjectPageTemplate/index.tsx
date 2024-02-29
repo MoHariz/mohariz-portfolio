@@ -2,12 +2,12 @@ import React from "react";
 import PageWrapper from "../PageWrapper";
 import Typography from "../Typography";
 import { HeadFC, graphql, Link } from "gatsby";
-import "./index.css";
 import { Tag } from '@chakra-ui/react'
 import AnimateOnScroll from "../../AnimateOnScroll";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
+import "./index.scss";
 
 type ProjectPageTemplateProps = {
     data: {
