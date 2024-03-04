@@ -3,7 +3,7 @@ import PageWrapper from "../PageWrapper";
 import Typography from "../Typography";
 import { HeadFC, graphql, Link } from "gatsby";
 import { Tag } from '@chakra-ui/react'
-import AnimateOnScroll from "../../AnimateOnScroll";
+import { WithAnimateOnScroll } from "../AnimateOnScroll";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
@@ -79,9 +79,9 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
                         )
                     }
                 </div>
-                <AnimateOnScroll oneDirectional animationName="fade-up" animationDuration="1s" animationDelay="0.5s" threshold={0.1}>
+                <WithAnimateOnScroll amount={0.1}>
                     <div className="project-content mb-8" dangerouslySetInnerHTML={{ __html: project.content }} />
-                </AnimateOnScroll>
+                </WithAnimateOnScroll>
             </>
         </PageWrapper>
     );

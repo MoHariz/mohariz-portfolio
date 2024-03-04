@@ -1,6 +1,6 @@
 import React from "react";
 import Typography from "../Typography";
-import AnimateOnScroll from "../../AnimateOnScroll";
+import { WithAnimateOnScroll } from "../AnimateOnScroll";
 import { Link } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkAlt, faLocationDot } from "@fortawesome/free-solid-svg-icons";
@@ -32,7 +32,7 @@ export default function Experiences({ experiences }: ExperiencesProps) {
                 {
                     experiences.map(experience => {
                         return (
-                            <AnimateOnScroll oneDirectional animationName="fade-up" animationDuration="1s" animationDelay="0.2s">
+                            <WithAnimateOnScroll amount={0.2} key={experience.title}>
 
                                 <div className="flex flex-col lg:flex-row gap-2 sm:gap-2 md:gap-4 lg:gap-0" key={experience.title}>
                                     <div className="w-full lg:w-1/4">
@@ -55,7 +55,7 @@ export default function Experiences({ experiences }: ExperiencesProps) {
                                     </div>
                                 </div>
 
-                            </AnimateOnScroll>
+                            </WithAnimateOnScroll>
                         )
                     })
                 }

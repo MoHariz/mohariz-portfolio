@@ -3,8 +3,9 @@ import PageWrapper from "../components/PageWrapper";
 import { HeadFC, Link, graphql } from "gatsby";
 import Typography from "../components/Typography";
 import { Tag } from '@chakra-ui/react'
-import AnimateOnScroll from "../AnimateOnScroll";
+import { WithAnimateOnScroll } from "../components/AnimateOnScroll";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import With3DHover from "../components/With3DHover";
 
 type ProjectNodeProps = {
     id: string;
@@ -60,10 +61,17 @@ function ProjectCard({ title, slug, featuredImage, technologies }: ProjectNodePr
     const image = getImage(featuredImage?.node);
 
     return (
-        <AnimateOnScroll oneDirectional animationName="fade-up" animationDuration="1s" animationDelay="0.2s">
+        <WithAnimateOnScroll amount={0.2}>
             <Link to={slug}>
                 <div className="lg:flex lg:gap-4 hover:-translate-y-1 hover:scale-105 duration-200">
-                    <GatsbyImage image={image} alt={featuredImage?.node.altText} className="object-cover lg:w-1/2 rounded-md border border-solid border-black dark:border-white" />
+                    <div 
+                        className="flex flex-col justify-center lg:w-1/2" 
+                        style={{ perspective: "1000px" }}
+                    >
+                        <With3DHover>
+                            <GatsbyImage style={{ perspective: "1000px" }} image={image} alt={featuredImage?.node.altText} className="object-cover rounded-md border border-solid border-black dark:border-white" />
+                        </With3DHover>
+                    </div>
                     <div className="lg:py-8 lg:w-1/2">
                         <Typography variant="h2" bold>{title}</Typography>
                         <div className="flex flex-wrap gap-2 lg:my-4 my-2">
@@ -79,7 +87,7 @@ function ProjectCard({ title, slug, featuredImage, technologies }: ProjectNodePr
                     </div>
                 </div>
             </Link>
-        </AnimateOnScroll>
+        </WithAnimateOnScroll>
     )
 }
 

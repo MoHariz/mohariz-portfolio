@@ -1,6 +1,6 @@
 import React from "react";
 import Typography from "../Typography";
-import AnimateOnScroll from "../../AnimateOnScroll";
+import { WithAnimateOnScroll } from "../AnimateOnScroll";
 import { Tag } from '@chakra-ui/react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
@@ -9,7 +9,7 @@ export default function Education() {
     return (
         <div className="py-8">
             <Typography className="mb-8" variant="h3" bold>EDUCATION</Typography>
-            <AnimateOnScroll oneDirectional animationName="fade-up" animationDuration="1s" animationDelay="0.2s">
+            <WithAnimateOnScroll amount={0.2}>
                 <div className="flex flex-col lg:flex-row gap-2 sm:gap-2 md:gap-4 lg:gap-0">
                     <div className="w-full lg:w-1/4">
                         <Typography variant="h6" italic>2016 - 2019</Typography>
@@ -25,7 +25,7 @@ export default function Education() {
                         <Typography className="mb-0" variant="p">Bachelor of Science in Informatics</Typography>
                     </div>
                 </div>
-            </AnimateOnScroll>
+            </WithAnimateOnScroll>
         </div>
     )
 }
