@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { motion } from "framer-motion";
 import "./index.scss";
 
 type AnimationName = 'fade-in' | 'fade-up';
@@ -76,3 +77,28 @@ const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
 
 export default AnimateOnScroll;
 
+
+type WithAnimateOnScrollProps = {
+    children: React.ReactNode;
+    amount?: number;
+}
+
+/**
+ * Animate the children component on scroll with a specified amount.
+ *
+ * @param {WithAnimateOnScrollProps} children - The component to be animated
+ * @param {number} amount - The amount of scroll to trigger animation (default is 0.5)
+ * @return {ReactNode} The animated component
+ */
+export function WithAnimateOnScroll({ children, amount=0.5 }: WithAnimateOnScrollProps) {
+    return (
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: amount }}
+          transition={{ duration: 0.5, ease: 'easeInOut' }}
+        >
+          {children}
+        </motion.div>
+    )
+}
