@@ -79,7 +79,7 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
                         )
                     }
                 </div>
-                <WithAnimateOnScroll amount={0.1}>
+                <WithAnimateOnScroll amount={0}>
                     <div className="project-content mb-8" dangerouslySetInnerHTML={{ __html: project.content }} />
                 </WithAnimateOnScroll>
             </>
