@@ -21,6 +21,7 @@ const config: GatsbyConfig = {
         "gatsby-plugin-postcss",
         "gatsby-plugin-sitemap",
         "gatsby-plugin-sass",
+        "gatsby-plugin-twitter",
         {
             resolve: "gatsby-source-filesystem",
             options: {

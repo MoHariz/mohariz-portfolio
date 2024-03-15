@@ -81,6 +81,11 @@
   iframe {
     max-width: 100%;
   }
+  .wp-block-embed {
+    iframe {
+      width: 100%;
+    }
+  }
 }
 
 .project-links {
