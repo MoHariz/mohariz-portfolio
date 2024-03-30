@@ -13,19 +13,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write",
-      "git add ."
-    ]
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
@@ -55,7 +44,6 @@
     "gatsby-source-wordpress": "^7.12.0",
     "gatsby-transformer-sharp": "^5.13.1",
     "husky": "^9.0.11",
-    "lint-staged": "^15.2.2",
     "postcss": "^8.4.29",
     "prettier": "^3.2.5",
     "react": "^18.2.0",
@@ -68,6 +56,8 @@
     "@types/node": "^20.3.3",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.2",
     "typescript": "^5.1.6"
   }
 }
