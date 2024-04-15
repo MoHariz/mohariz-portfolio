@@ -5,7 +5,7 @@ import { faFile } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { Tooltip } from '@chakra-ui/react';
 import { Link } from 'gatsby';
-import Typography from '../Typography';
+import Typography from '@components/Typography';
 import { Typewriter } from 'react-simple-typewriter';
 
 const Hero: React.FC = () => {

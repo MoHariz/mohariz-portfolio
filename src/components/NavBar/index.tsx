@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import { useNotAtPageTop } from '../../hooks/ScrollBehaviorHooks';
-import ThemeToggle from '../ThemeToggle';
+import { useNotAtPageTop } from '@hooks/ScrollBehaviorHooks';
+import ThemeToggle from '@components/ThemeToggle';
 
 const NavBar: React.FC = () => {
   const isNotAtPageTop = useNotAtPageTop();
