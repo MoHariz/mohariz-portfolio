@@ -4,10 +4,11 @@ import Typography from '@components/Typography';
 import { HeadFC, graphql, Link } from 'gatsby';
 import { Tag } from '@chakra-ui/react';
 import { WithAnimateOnScroll } from '@components/AnimateOnScroll';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import ExternalLink from '@components/ExternalLink';
+import Seo from '@components/Seo';
 import './index.scss';
 
 type ProjectPageTemplateProps = {
@@ -31,6 +32,7 @@ type ProjectPageTemplateProps = {
         node: {
           altText: string;
           gatsbyImage: any;
+          ogImage?: any;
         };
       };
     };
@@ -95,13 +97,29 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
   );
 }
 
-export const Head: HeadFC<ProjectPageTemplateProps['data']> = (data) => {
+const stripHtml = (html: string) =>
+  html
+    .replace(/<[^>]*>?/gm, '')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&#8217;/g, '\u2019')
+    .replace(/&#8230;|\[&hellip;\]/g, '\u2026')
+    .replace(/&amp;/g, '&')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+export const Head: HeadFC<ProjectPageTemplateProps['data']> = ({ data, location }) => {
+  const { project } = data;
+  const image = project.featuredImage?.node;
+
   return (
-    <>
-      <html lang='en' />
-      <title>{`Muhammad Hariz | Projects - ${data.data.project.title}`}</title>
-      <meta name='description' content={data.data.project.excerpt.replace(/<[^>]*>?/gm, '')} />
-    </>
+    <Seo
+      title={project.title}
+      description={stripHtml(project.excerpt)}
+      pathname={location.pathname}
+      image={image?.ogImage ? getSrc(image.ogImage) : undefined}
+      imageAlt={image?.altText || project.title}
+      type='article'
+    />
   );
 };
 
@@ -113,6 +131,7 @@ export const pageQuery = graphql`
         node {
           altText
           gatsbyImage(width: 880, height: 438, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          ogImage: gatsbyImage(width: 1200, height: 630, layout: FIXED, fit: COVER, formats: [JPG])
         }
       }
       title
