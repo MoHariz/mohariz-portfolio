@@ -6,6 +6,7 @@ import SkillSets, { SkillSetNodeProps } from '@components/SkillSets/index';
 import Experiences, { ExperienceNodeProps } from '@components/Experiences/index';
 import Education from '@components/Education';
 import AboutMe, { AboutMeProps } from '@components/AboutMe';
+import Seo from '@components/Seo';
 
 type HomePageProps = {
   data: {
@@ -40,16 +41,19 @@ export default function IndexPage({ data }: HomePageProps) {
   );
 }
 
-export const Head: HeadFC = () => {
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Muhammad Hariz',
+  url: 'https://mohariz.me',
+  sameAs: [process.env.GATSBY_LINKEDIN_URL, process.env.GATSBY_GITHUB_LINK].filter(Boolean)
+};
+
+export const Head: HeadFC = ({ location }) => {
   return (
-    <>
-      <html lang='en' />
-      <title>Muhammad Hariz | Home Page</title>
-      <meta
-        name='description'
-        content='Muhammad Hariz - Full Stack Software Engineer with interests in front-end development, software infrastructure, and data analytics.'
-      />
-    </>
+    <Seo pathname={location.pathname} type='profile'>
+      <script type='application/ld+json'>{JSON.stringify(personSchema)}</script>
+    </Seo>
   );
 };
 

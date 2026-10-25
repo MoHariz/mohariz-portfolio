@@ -2,6 +2,7 @@ import * as React from 'react';
 import { HeadFC, Link } from 'gatsby';
 import PageWrapper from '@components/PageWrapper';
 import Typography from '@components/Typography';
+import Seo from '@components/Seo';
 
 const codeStyles = {
   color: '#8A6534',
@@ -42,11 +43,6 @@ const NotFoundPage: React.FC = () => {
 
 export default NotFoundPage;
 
-export const Head: HeadFC = () => {
-  return (
-    <>
-      <html lang='en' />
-      <title>Page Not Found</title>
-    </>
-  );
+export const Head: HeadFC = ({ location }) => {
+  return <Seo title='Page Not Found' pathname={location.pathname} noindex />;
 };

@@ -6,6 +6,7 @@ import { Tag } from '@chakra-ui/react';
 import { WithAnimateOnScroll } from '@components/AnimateOnScroll';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import With3DHover from '@components/With3DHover';
+import Seo from '@components/Seo';
 
 type ProjectNodeProps = {
   id: string;
@@ -91,13 +92,13 @@ function ProjectCard({ title, slug, featuredImage, technologies }: ProjectNodePr
   );
 }
 
-export const Head: HeadFC = () => {
+export const Head: HeadFC = ({ location }) => {
   return (
-    <>
-      <html lang='en' />
-      <title>Muhammad Hariz | Projects</title>
-      <meta name='description' content='A list of my professional and personal projects.' />
-    </>
+    <Seo
+      title='Projects'
+      description='A list of my professional and personal projects.'
+      pathname={location.pathname}
+    />
   );
 };
 
