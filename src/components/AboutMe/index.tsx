@@ -27,11 +27,13 @@ export default function AboutMe({ featuredImage, content }: AboutMeProps) {
       </Typography>
       <WithAnimateOnScroll amount={0.2}>
         <div className='flex flex-col gap-2 sm:gap-2 md:gap-4'>
-          <GatsbyImage
-            image={image}
-            alt={featuredImage.node.altText}
-            className='w-1/3 lg:w-1/4 rounded-md border border-solid border-black dark:border-white'
-          />
+          {image && (
+            <GatsbyImage
+              image={image}
+              alt={featuredImage.node.altText}
+              className='w-1/3 lg:w-1/4 rounded-md border border-solid border-black dark:border-white'
+            />
+          )}
           <Typography className='mb-0' variant='p'>
             <div className='about-me-content' dangerouslySetInnerHTML={{ __html: content }} />
           </Typography>

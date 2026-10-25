@@ -7,6 +7,7 @@ import { WithAnimateOnScroll } from '@components/AnimateOnScroll';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import ExternalLink from '@components/ExternalLink';
 import './index.scss';
 
 type ProjectPageTemplateProps = {
@@ -51,7 +52,7 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
         <Link to='/projects' className='font-bold'>
           &#8592; BACK
         </Link>
-        {project.featuredImage && (
+        {project.featuredImage && image && (
           <GatsbyImage
             image={image}
             alt={project.featuredImage.node.altText}
@@ -68,19 +69,19 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
         </div>
         <div className='project-links flex flex-wrap gap-4 my-4 justify-center sm:justify-start'>
           {project.projectLinks.github && (
-            <Link to={project.projectLinks.github} target='_blank' rel='noreferrer'>
+            <ExternalLink href={project.projectLinks.github}>
               Github <FontAwesomeIcon className='w-3 h-3' icon={faExternalLinkAlt} />
-            </Link>
+            </ExternalLink>
           )}
           {project.projectLinks.website && (
-            <Link to={project.projectLinks.website} target='_blank' rel='noreferrer'>
+            <ExternalLink href={project.projectLinks.website}>
               Website <FontAwesomeIcon className='w-3 h-3' icon={faExternalLinkAlt} />
-            </Link>
+            </ExternalLink>
           )}
           {project.projectLinks.publication && (
-            <Link to={project.projectLinks.publication} target='_blank' rel='noreferrer'>
+            <ExternalLink href={project.projectLinks.publication}>
               Publication <FontAwesomeIcon className='w-3 h-3' icon={faExternalLinkAlt} />
-            </Link>
+            </ExternalLink>
           )}
         </div>
         <WithAnimateOnScroll amount={0}>
@@ -94,7 +95,7 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
   );
 }
 
-export const Head: HeadFC = (data) => {
+export const Head: HeadFC<ProjectPageTemplateProps['data']> = (data) => {
   return (
     <>
       <html lang='en' />

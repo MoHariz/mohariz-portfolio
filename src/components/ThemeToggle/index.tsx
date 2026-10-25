@@ -20,9 +20,9 @@ export default function ThemeToggle() {
         colorScheme='yellow'
         isChecked={colorMode === 'dark'}
         onChange={toggleColorMode}
-        aria-label="Toggle dark mode"
+        aria-label='Toggle dark mode'
       />
       <FontAwesomeIcon icon={colorMode === 'dark' ? faMoon : faSun} />
     </div>
   );
-};
+}

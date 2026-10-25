@@ -1,11 +1,11 @@
 import { useRef, useState, useEffect } from 'react';
 /**
  * A hook that determines if the user has scrolled down on the page.
- * 
+ *
  * It listens to the scroll event and updates the state based on the scroll direction.
- * The state is `true` if the user has scrolled down from the initial position, 
+ * The state is `true` if the user has scrolled down from the initial position,
  * and `false` if scrolled up or remains at the initial position.
- * 
+ *
  * @returns {boolean} hasScrolledDown - The state indicating if a scroll down has occurred.
  */
 export const useHasScrolledDown = () => {
@@ -33,13 +33,12 @@ export const useHasScrolledDown = () => {
   return hasScrolledDown;
 };
 
-
 export const useNotAtPageTop = () => {
   const [isNotAtPageTop, setIsNotAtPageTop] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsNotAtPageTop(window.pageYOffset || document.documentElement.scrollTop > 0);
+      setIsNotAtPageTop((window.pageYOffset || document.documentElement.scrollTop) > 0);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -51,4 +50,3 @@ export const useNotAtPageTop = () => {
 
   return isNotAtPageTop;
 };
-

@@ -4,7 +4,7 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faFile } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { Tooltip } from '@chakra-ui/react';
-import { Link } from 'gatsby';
+import ExternalLink from '@components/ExternalLink';
 import Typography from '@components/Typography';
 import { Typewriter } from 'react-simple-typewriter';
 
@@ -33,21 +33,21 @@ const Hero: React.FC = () => {
         </Typography>
 
         <div className='flex gap-4 lg:mt-30 md:mt-20 mt-10'>
-          <Link className='relative' target='_blank' to={process.env.GATSBY_LINKEDIN_URL || ''}>
+          <ExternalLink className='relative' href={process.env.GATSBY_LINKEDIN_URL || ''}>
             <Tooltip label='LinkedIn'>
               <FontAwesomeIcon className='w-8 h-8' icon={faLinkedin} />
             </Tooltip>
-          </Link>
-          <Link className='relative' target='_blank' to={process.env.GATSBY_GITHUB_LINK || ''}>
+          </ExternalLink>
+          <ExternalLink className='relative' href={process.env.GATSBY_GITHUB_LINK || ''}>
             <Tooltip label='Github'>
               <FontAwesomeIcon className='w-8 h-8' icon={faGithub} />
             </Tooltip>
-          </Link>
-          <Link target='_blank' to={process.env.GATSBY_RESUME_LINK || ''}>
+          </ExternalLink>
+          <ExternalLink href={process.env.GATSBY_RESUME_LINK || ''}>
             <Tooltip label='Resume'>
               <FontAwesomeIcon className='w-8 h-8' icon={faFile} />
             </Tooltip>
-          </Link>
+          </ExternalLink>
         </div>
       </div>
     </div>

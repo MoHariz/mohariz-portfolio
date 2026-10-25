@@ -54,7 +54,7 @@ export default function ProjectsPage({ data }: ProjectsPageProps) {
 }
 
 function ProjectCard({ title, slug, featuredImage, technologies }: ProjectNodeProps) {
-  const image = getImage(featuredImage?.node);
+  const image = getImage(featuredImage?.node ?? null);
 
   return (
     <WithAnimateOnScroll amount={0.2}>
@@ -62,12 +62,14 @@ function ProjectCard({ title, slug, featuredImage, technologies }: ProjectNodePr
         <div className='lg:flex lg:gap-4 hover:-translate-y-1 hover:scale-105 duration-200'>
           <div className='flex flex-col justify-center lg:w-1/2' style={{ perspective: '1000px' }}>
             <With3DHover>
-              <GatsbyImage
-                style={{ perspective: '1000px' }}
-                image={image}
-                alt={featuredImage?.node.altText}
-                className='object-cover rounded-md border border-solid border-black dark:border-white'
-              />
+              {image && (
+                <GatsbyImage
+                  style={{ perspective: '1000px' }}
+                  image={image}
+                  alt={featuredImage?.node.altText || title}
+                  className='object-cover rounded-md border border-solid border-black dark:border-white'
+                />
+              )}
             </With3DHover>
           </div>
           <div className='lg:py-8 lg:w-1/2'>

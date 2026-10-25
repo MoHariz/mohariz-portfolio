@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from '@components/Typography';
 import { WithAnimateOnScroll } from '@components/AnimateOnScroll';
-import { Link } from 'gatsby';
+import ExternalLink from '@components/ExternalLink';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { Tag } from '@chakra-ui/react';
@@ -49,13 +49,12 @@ export default function Experiences({ experiences }: ExperiencesProps) {
                 <div className='w-full lg:w-3/4 rounded-md border border-solid border-black dark:border-white p-4'>
                   <Typography variant='h6'>
                     {experience.experienceDetail.companyUrl && (
-                      <Link
+                      <ExternalLink
                         className='font-bold hover:underline p-2'
-                        to={experience.experienceDetail.companyUrl}
-                        target='_blank'
+                        href={experience.experienceDetail.companyUrl}
                       >
                         <FontAwesomeIcon className='w-3 h-3' icon={faExternalLinkAlt} />
-                      </Link>
+                      </ExternalLink>
                     )}
                     <span className='font-bold'>{experience.title}</span> -{' '}
                     {experience.experienceDetail.roleTitle}
