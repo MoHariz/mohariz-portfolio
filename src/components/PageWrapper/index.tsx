@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { PageProps } from 'gatsby';
 import NavBar from '@components/NavBar';
 import Footer from '@components/Footer/Footer';
 import { motion, useScroll } from 'framer-motion';
@@ -9,7 +8,8 @@ type PageWrapperProps = {
   pageStyles?: React.CSSProperties;
   hideFooter?: boolean;
   addProgressBar?: boolean;
-} & PageProps;
+  children?: React.ReactNode;
+};
 
 const PageWrapper: React.FC<PageWrapperProps> = ({
   children,
