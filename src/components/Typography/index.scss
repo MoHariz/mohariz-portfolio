@@ -26,12 +26,25 @@
 }
 
 @media (max-width: 768px) {
-  .typography-h1 { @include typography-styles(2.2rem); }
-  .typography-h2 { @include typography-styles(1.8rem); }
-  .typography-h3 { @include typography-styles(1.6rem); }
-  .typography-h4 { @include typography-styles(1.4rem); }
-  .typography-h5 { @include typography-styles(1.2rem); }
-  .typography-h6 { @include typography-styles(1rem); }
-  .typography-p  { @include typography-styles(0.9rem); }
+  .typography-h1 {
+    @include typography-styles(2.2rem);
+  }
+  .typography-h2 {
+    @include typography-styles(1.8rem);
+  }
+  .typography-h3 {
+    @include typography-styles(1.6rem);
+  }
+  .typography-h4 {
+    @include typography-styles(1.4rem);
+  }
+  .typography-h5 {
+    @include typography-styles(1.2rem);
+  }
+  .typography-h6 {
+    @include typography-styles(1rem);
+  }
+  .typography-p {
+    @include typography-styles(0.9rem);
+  }
 }
-
