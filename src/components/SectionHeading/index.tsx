@@ -11,7 +11,12 @@ type SectionHeadingProps = {
 /** Uppercase section title with the yellow accent bar used across the site. */
 const SectionHeading: React.FC<SectionHeadingProps> = ({ children, variant = 'h3', className }) => (
   <div className={cs('mb-8', className)}>
-    <Typography variant={variant} bold className='uppercase tracking-tight'>
+    <Typography
+      variant={variant}
+      as={variant === 'h1' ? 'h1' : 'h2'}
+      bold
+      className='uppercase tracking-tight'
+    >
       {children}
     </Typography>
     <span

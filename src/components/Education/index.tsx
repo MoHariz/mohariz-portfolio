@@ -22,7 +22,7 @@ export default function Education() {
             </Tag>
           </div>
           <div className='w-full lg:w-3/4 rounded-md border border-solid border-black dark:border-white p-4 md:p-5'>
-            <Typography variant='h6' bold>
+            <Typography variant='h6' as='h3' bold>
               University of Washington
             </Typography>
             <Typography className='mb-0' variant='p'>

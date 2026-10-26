@@ -82,13 +82,6 @@ const config: GatsbyConfig = {
       }
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`poppins:300,400,400i,700`],
-        display: 'swap'
-      }
-    },
-    {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: {

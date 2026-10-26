@@ -29,7 +29,7 @@ export default function SkillSets({ skillSets }: SkillSetsProps) {
                 className='border rounded-md border-solid border-black dark:border-white p-4'
                 key={skillSet.title}
               >
-                <Typography variant='h5' className='mb-4' bold>
+                <Typography variant='h5' as='h3' className='mb-4' bold>
                   {skillSet.title}
                 </Typography>
                 <div className='flex flex-wrap gap-2'>
