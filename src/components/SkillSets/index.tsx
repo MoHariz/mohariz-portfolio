@@ -1,6 +1,7 @@
 import React from 'react';
 import { Tag } from '@chakra-ui/react';
 import Typography from '@components/Typography';
+import SectionHeading from '@components/SectionHeading';
 import { WithAnimateOnScroll } from '@components/AnimateOnScroll';
 
 export type SkillSetNodeProps = {
@@ -19,9 +20,7 @@ type SkillSetsProps = {
 export default function SkillSets({ skillSets }: SkillSetsProps) {
   return (
     <div className='py-8'>
-      <Typography className='mb-8' variant='h3' bold>
-        SKILLS SETS
-      </Typography>
+      <SectionHeading>Skills</SectionHeading>
       <WithAnimateOnScroll amount={0.2}>
         <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4'>
           {skillSets.map((skillSet) => {

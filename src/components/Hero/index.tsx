@@ -8,6 +8,8 @@ import ExternalLink from '@components/ExternalLink';
 import Typography from '@components/Typography';
 import { Typewriter } from 'react-simple-typewriter';
 
+const iconLink = 'transition-transform duration-150 hover:-translate-y-1';
+
 const Hero: React.FC = () => {
   const verbs = ['connect!', 'design!', 'implement!', 'test!', 'ask all the questions!'];
 
@@ -32,18 +34,18 @@ const Hero: React.FC = () => {
           Let&apos;s <Typewriter words={verbs} loop={5} cursor cursorStyle='|' />
         </Typography>
 
-        <div className='flex gap-4 lg:mt-30 md:mt-20 mt-10'>
-          <ExternalLink className='relative' href={process.env.GATSBY_LINKEDIN_URL || ''}>
+        <div className='flex gap-5 mt-10 md:mt-16'>
+          <ExternalLink className={iconLink} href={process.env.GATSBY_LINKEDIN_URL || ''}>
             <Tooltip label='LinkedIn'>
               <FontAwesomeIcon className='w-8 h-8' icon={faLinkedin} />
             </Tooltip>
           </ExternalLink>
-          <ExternalLink className='relative' href={process.env.GATSBY_GITHUB_LINK || ''}>
+          <ExternalLink className={iconLink} href={process.env.GATSBY_GITHUB_LINK || ''}>
             <Tooltip label='Github'>
               <FontAwesomeIcon className='w-8 h-8' icon={faGithub} />
             </Tooltip>
           </ExternalLink>
-          <ExternalLink href={process.env.GATSBY_RESUME_LINK || ''}>
+          <ExternalLink className={iconLink} href={process.env.GATSBY_RESUME_LINK || ''}>
             <Tooltip label='Resume'>
               <FontAwesomeIcon className='w-8 h-8' icon={faFile} />
             </Tooltip>

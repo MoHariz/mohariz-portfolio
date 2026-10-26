@@ -2,9 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Fonts and base text colors come from the Chakra theme (src/theme.ts). */
 
-/* Font family for everything */
-body {
-    font-family: -apple-system, BlinkMacSystemFont, poppins, sans-serif;
-    color: "#232129";
+html {
+  scroll-padding-top: 72px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 2px;
 }

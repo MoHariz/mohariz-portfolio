@@ -1,11 +1,11 @@
 .about-me-content {
-    p {
-        line-height: 1.6;
-        margin-bottom: 1.6em;
+  p {
+    line-height: 1.6;
+    margin-bottom: 1.6em;
 
-        a {
-            text-decoration: underline;
-        }
+    a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
+  }
 }
-

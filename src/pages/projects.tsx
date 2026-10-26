@@ -7,6 +7,7 @@ import { WithAnimateOnScroll } from '@components/AnimateOnScroll';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import With3DHover from '@components/With3DHover';
 import Seo from '@components/Seo';
+import SectionHeading from '@components/SectionHeading';
 
 type ProjectNodeProps = {
   id: string;
@@ -37,14 +38,14 @@ export default function ProjectsPage({ data }: ProjectsPageProps) {
   return (
     <PageWrapper
       pageStyles={{
-        paddingTop: '57px'
+        paddingTop: '104px'
       }}
     >
       <>
-        <Typography className='mb-8' variant='h1' bold>
-          PROJECTS
-        </Typography>
-        <div className='flex flex-col lg:gap-8 sm:gap-20 gap-20 mb-8'>
+        <SectionHeading variant='h1' className='mb-12'>
+          Projects
+        </SectionHeading>
+        <div className='flex flex-col gap-16 lg:gap-12 mb-12'>
           {data.projects.nodes.map((project) => {
             return <ProjectCard key={project.id} {...project} />;
           })}
@@ -59,8 +60,8 @@ function ProjectCard({ title, slug, featuredImage, technologies }: ProjectNodePr
 
   return (
     <WithAnimateOnScroll amount={0.2}>
-      <Link to={slug}>
-        <div className='lg:flex lg:gap-4 hover:-translate-y-1 hover:scale-105 duration-200'>
+      <Link to={slug} className='group block'>
+        <div className='lg:flex lg:gap-8 lg:items-center'>
           <div className='flex flex-col justify-center lg:w-1/2' style={{ perspective: '1000px' }}>
             <With3DHover>
               {image && (
@@ -68,13 +69,17 @@ function ProjectCard({ title, slug, featuredImage, technologies }: ProjectNodePr
                   style={{ perspective: '1000px' }}
                   image={image}
                   alt={featuredImage?.node.altText || title}
-                  className='object-cover rounded-md border border-solid border-black dark:border-white'
+                  className='object-cover rounded-md border border-solid border-black dark:border-white transition-shadow duration-200 group-hover:shadow-[6px_6px_0_0_#000] dark:group-hover:shadow-[6px_6px_0_0_#fde047]'
                 />
               )}
             </With3DHover>
           </div>
-          <div className='lg:py-8 lg:w-1/2'>
-            <Typography variant='h2' bold>
+          <div className='mt-4 lg:mt-0 lg:w-1/2'>
+            <Typography
+              variant='h2'
+              bold
+              className='group-hover:underline underline-offset-4 decoration-yellow-300 decoration-4'
+            >
               {title}
             </Typography>
             <div className='flex flex-wrap gap-2 lg:my-4 my-2'>
@@ -82,9 +87,15 @@ function ProjectCard({ title, slug, featuredImage, technologies }: ProjectNodePr
                 return <Tag key={tech.name}>{tech.name}</Tag>;
               })}
             </div>
-            <Link className='font-bold' to={slug}>
-              READ MORE &#8594;
-            </Link>
+            <span className='inline-flex items-center gap-1 font-bold'>
+              READ MORE
+              <span
+                aria-hidden
+                className='transition-transform duration-150 group-hover:translate-x-1'
+              >
+                &#8594;
+              </span>
+            </span>
           </div>
         </div>
       </Link>
