@@ -4,7 +4,7 @@ import { HeadFC, Link, graphql } from 'gatsby';
 import Typography from '@components/Typography';
 import { Tag } from '@chakra-ui/react';
 import { WithAnimateOnScroll } from '@components/AnimateOnScroll';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import With3DHover from '@components/With3DHover';
 import Seo from '@components/Seo';
 import SectionHeading from '@components/SectionHeading';
@@ -16,7 +16,7 @@ type ProjectNodeProps = {
   featuredImage?: {
     node: {
       altText: string;
-      gatsbyImage: any;
+      gatsbyImage: IGatsbyImageData;
     };
   };
   technologies: {

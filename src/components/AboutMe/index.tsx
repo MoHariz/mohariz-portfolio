@@ -4,14 +4,14 @@ import SectionHeading from '@components/SectionHeading';
 import { WithAnimateOnScroll } from '@components/AnimateOnScroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import './index.scss';
 
 export type AboutMeProps = {
   featuredImage: {
     node: {
       altText: string;
-      gatsbyImage: any;
+      gatsbyImage: IGatsbyImageData;
     };
   };
   content: string;

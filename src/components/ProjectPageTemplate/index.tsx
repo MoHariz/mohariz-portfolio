@@ -4,7 +4,7 @@ import Typography from '@components/Typography';
 import { HeadFC, graphql, Link } from 'gatsby';
 import { Tag } from '@chakra-ui/react';
 import { WithAnimateOnScroll } from '@components/AnimateOnScroll';
-import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage, getSrc, IGatsbyImageData } from 'gatsby-plugin-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import ExternalLink from '@components/ExternalLink';
@@ -31,8 +31,8 @@ type ProjectPageTemplateProps = {
       featuredImage?: {
         node: {
           altText: string;
-          gatsbyImage: any;
-          ogImage?: any;
+          gatsbyImage: IGatsbyImageData;
+          ogImage?: IGatsbyImageData;
         };
       };
     };
@@ -41,7 +41,7 @@ type ProjectPageTemplateProps = {
 
 export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) {
   const project = data.project;
-  const image = getImage(project.featuredImage?.node.gatsbyImage);
+  const image = getImage(project.featuredImage?.node.gatsbyImage ?? null);
 
   return (
     <PageWrapper
