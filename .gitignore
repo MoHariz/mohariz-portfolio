@@ -3,6 +3,5 @@ node_modules/
 public
 src/gatsby-types.d.ts
 *.DS_Store
-package-lock.json
 .env*
 !.env.example

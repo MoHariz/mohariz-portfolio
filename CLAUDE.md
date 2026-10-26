@@ -7,6 +7,8 @@ Gatsby 5 + React 18 + TypeScript. Deployed at https://mohariz.me.
 - `npm run typecheck` — must pass (0 errors) after every change
 - `npx eslint --quiet src` — must pass
 - `npm run build` — needs the env vars below; the full end-to-end check
+- After removing a Gatsby plugin, Netlify needs one "Clear cache and deploy site" (its restored
+  `.cache` still lists the old plugin)
 
 ## Content lives in WordPress, not this repo
 - Skill sets, experiences, About Me, and projects come from headless WordPress via
@@ -27,4 +29,7 @@ Gatsby 5 + React 18 + TypeScript. Deployed at https://mohariz.me.
 - Styling: prefer Tailwind classes for new code. Chakra is used for `Tag`/`Tooltip`; SCSS only
   for WordPress HTML content styling (`*-content` classes).
 - Dark mode via Tailwind `dark:` classes; keep the black/white bordered-card look consistent.
+- Fonts: Poppins is self-hosted via `@fontsource/poppins` (Latin subset) in `gatsby-browser.js` and
+  applied through the Chakra theme (`src/theme.ts`). Don't add Google Fonts back.
+- Headings: use `Typography`'s `as` prop to keep h1 → h2 → h3 order independent of visual size.
 - Prettier: single quotes, JSX single quotes, no trailing commas, 100 cols.
