@@ -46,13 +46,22 @@ export default function ProjectPageTemplate({ data }: ProjectPageTemplateProps) 
   return (
     <PageWrapper
       pageStyles={{
-        paddingTop: '57px'
+        paddingTop: '88px'
       }}
       addProgressBar
     >
       <>
-        <Link to='/projects' className='font-bold'>
-          &#8592; BACK
+        <Link
+          to='/projects'
+          className='group inline-flex items-center gap-1 font-bold underline-offset-4 decoration-2 hover:underline'
+        >
+          <span
+            aria-hidden
+            className='transition-transform duration-150 group-hover:-translate-x-1'
+          >
+            &#8592;
+          </span>
+          ALL PROJECTS
         </Link>
         {project.featuredImage && image && (
           <GatsbyImage
