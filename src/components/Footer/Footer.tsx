@@ -19,13 +19,25 @@ const Footer: React.FC = () => {
         </p>
 
         <div className='flex gap-4'>
-          <ExternalLink className={iconLink} href={process.env.GATSBY_LINKEDIN_URL || ''}>
+          <ExternalLink
+            className={iconLink}
+            href={process.env.GATSBY_LINKEDIN_URL || ''}
+            aria-label='LinkedIn'
+          >
             <FontAwesomeIcon className='w-5 h-5' icon={faLinkedin} />
           </ExternalLink>
-          <ExternalLink className={iconLink} href={process.env.GATSBY_GITHUB_LINK || ''}>
+          <ExternalLink
+            className={iconLink}
+            href={process.env.GATSBY_GITHUB_LINK || ''}
+            aria-label='GitHub'
+          >
             <FontAwesomeIcon className='w-5 h-5' icon={faGithub} />
           </ExternalLink>
-          <ExternalLink className={iconLink} href={process.env.GATSBY_RESUME_LINK || ''}>
+          <ExternalLink
+            className={iconLink}
+            href={process.env.GATSBY_RESUME_LINK || ''}
+            aria-label='Resume'
+          >
             <FontAwesomeIcon className='w-5 h-5' icon={faFile} />
           </ExternalLink>
         </div>

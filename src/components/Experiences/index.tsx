@@ -47,7 +47,7 @@ export default function Experiences({ experiences }: ExperiencesProps) {
                   </Tag>
                 </div>
                 <div className='w-full lg:w-3/4 rounded-md border border-solid border-black dark:border-white p-4 md:p-5'>
-                  <Typography variant='h6' className='mb-2'>
+                  <Typography variant='h6' as='h3' className='mb-2'>
                     <span className='font-bold'>{experience.experienceDetail.roleTitle}</span>
                     <span className='opacity-60'> &middot; </span>
                     {experience.experienceDetail.companyUrl ? (

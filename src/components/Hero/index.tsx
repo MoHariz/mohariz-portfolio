@@ -26,26 +26,38 @@ const Hero: React.FC = () => {
         <Typography variant='h1' bold>
           Hi, I&apos;m Muhammad.
         </Typography>
-        <Typography variant='h3' className='mt-4'>
+        <Typography variant='h3' as='p' className='mt-4'>
           I am a full-stack software engineer with interests in front-end development, software
           infrastructure, and data analytics.
         </Typography>
-        <Typography variant='h3' className='mt-4'>
+        <Typography variant='h3' as='p' className='mt-4'>
           Let&apos;s <Typewriter words={verbs} loop={5} cursor cursorStyle='|' />
         </Typography>
 
         <div className='flex gap-5 mt-10 md:mt-16'>
-          <ExternalLink className={iconLink} href={process.env.GATSBY_LINKEDIN_URL || ''}>
+          <ExternalLink
+            className={iconLink}
+            href={process.env.GATSBY_LINKEDIN_URL || ''}
+            aria-label='LinkedIn'
+          >
             <Tooltip label='LinkedIn'>
               <FontAwesomeIcon className='w-8 h-8' icon={faLinkedin} />
             </Tooltip>
           </ExternalLink>
-          <ExternalLink className={iconLink} href={process.env.GATSBY_GITHUB_LINK || ''}>
+          <ExternalLink
+            className={iconLink}
+            href={process.env.GATSBY_GITHUB_LINK || ''}
+            aria-label='GitHub'
+          >
             <Tooltip label='Github'>
               <FontAwesomeIcon className='w-8 h-8' icon={faGithub} />
             </Tooltip>
           </ExternalLink>
-          <ExternalLink className={iconLink} href={process.env.GATSBY_RESUME_LINK || ''}>
+          <ExternalLink
+            className={iconLink}
+            href={process.env.GATSBY_RESUME_LINK || ''}
+            aria-label='Resume'
+          >
             <Tooltip label='Resume'>
               <FontAwesomeIcon className='w-8 h-8' icon={faFile} />
             </Tooltip>

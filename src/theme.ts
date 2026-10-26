@@ -5,8 +5,8 @@ const config: ThemeConfig = {
   useSystemColorMode: false
 };
 
-// Poppins is loaded by gatsby-plugin-google-fonts. Chakra's base styles set the body font,
-// so the font has to be set here for it to apply.
+// Poppins is self-hosted via @fontsource/poppins (imported in gatsby-browser.js). Chakra's base
+// styles set the body font, so the font has to be set here for it to apply.
 const fontStack = 'Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
 
 const theme = extendTheme({
